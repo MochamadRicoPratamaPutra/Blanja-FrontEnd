@@ -1,0 +1,32 @@
+.container{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+    font-family: 'Metropolis';
+}
+.category h1{
+    font-weight: bold;
+}
+.category p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    color: #9B9B9B;
+}
+.cardbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+@media (max-width: 576px){
+    .container{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .container div.cardbox{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,203 @@
+header{
+    height: 271px;
+    width: 500px;
+    /* border:2px solid brown; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.logo{
+    width: 135px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header p{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: auto; */
+    /* line-height: 18px; */
+}
+.cusel{
+    width: 245px;
+    height: 48px;
+    /* margin: auto; */
+    font-family: 'Metropolis';
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    /* box-sizing: border-box; */
+}
+
+.buttonCustomer{
+    height: 48px;
+    width: 123px;
+    color: white;
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    /* padding-top: 15px; */
+    /* padding: 17px 22px; */
+    box-sizing: border-box;
+    background: #DB3022;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 4px 0px 0px 4px;
+}
+.buttonSeller{
+    height: 48px;
+    width: 123px;
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    /* padding-top: 15px; */
+    background-color: white;
+    color: #9B9B9B;
+    border: 1px solid #9B9B9B;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.05));
+    border-radius: 0px 4px 4px 0px;
+}
+.login{
+    /* height: 280px; */
+    width: 401px;
+    /* border:1px solid green ; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.mail{
+    width: 400px;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    padding-left: 10px;
+    /* border-radius: 4px; */
+}
+.forgot{
+    /* margin-left: 250px;
+    margin-bottom: 26px; */
+    color: #DB3022;
+    font-family: 'Metropolis';
+    margin-left: auto;
+    margin-bottom: 26px;
+}
+.forgot:hover{
+    text-decoration: none;
+}
+.linkRegister:hover{
+    text-decoration: none;
+}
+.button1{
+    color: white;
+    width: 401px;
+    /* height: 48px; */
+    background-color: #DB3022;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 14px;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-family: 'Metropolis';
+    /* margin-bottom: 40px;*/
+    border-radius: 25px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    outline: none !important;
+}
+.linkRegister{
+    color: #DB3022;
+}
+.login p{
+    font-family: 'Metropolis';
+    font-size: 14px;
+    margin: auto;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+a:active {
+text-decoration: underline;
+}
+.boxBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.warning{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #F01F0E;
+}
+.modalTextTitle{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #253757;
+}
+.changePass{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FFFFFF;
+    padding: 8px 40px;
+    background-color: red;
+    background: #DB3022;
+    opacity: 0.9;
+    border-radius: 25px;
+    /* text-decoration: none; */
+}
+.changePass:hover{
+    text-decoration: none;
+}
+.confirmPassword{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #F01F0E;
+}
+.confirmLogin{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #9B9B9B;
+}

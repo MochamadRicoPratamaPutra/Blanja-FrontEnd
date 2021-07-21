@@ -1,0 +1,391 @@
+.content{
+    margin-top: 50px;
+    margin-left: 150px;
+}
+.title{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 34px;
+    color: #222222;
+    margin-bottom: 30px;
+}
+.subTitle{
+    font-family: Metropolis;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+    margin-bottom: 16px;
+}
+.addressUser{
+    font-family: 'Metropolis';
+    height: 190px;
+    width: 720px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(115, 115, 115, 0.25);
+    border: 1px solid white;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.titleBox{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.addressDetail{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #222222;
+    margin: 10px 35px 20px 30px;
+}
+.btnAddressUser{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #222222;
+    padding-left: 23px;
+    padding-right: 23px;
+    border: 1px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 24px;
+    background-color: #fff;
+    color: #9B9B9B;
+    margin-left: 30px;
+}
+/* item ================================================================================================================================================================================================================== */
+.item{
+    margin-bottom: 20px;
+    width: 720px;
+    height: 126px;
+    /* border: 1px solid black; */
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(115, 115, 115, 0.25);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: 24px 22px;
+}
+.formCheckItem{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.itemImage{
+    height: 69px;
+    width: 69px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.itemName{
+    font-family: 'Metropolis';
+    margin-left: -300px;
+}
+.itemTitle{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+.itemBrand{
+    font-family: Metropolis;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: #9B9B9B;
+}
+.itemAmount{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+}
+.itemAmount p{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+}
+.itemAmount img{
+    margin-right: 20px;
+}
+.itemPrice{
+    font-family: Metropolis;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/* payment ======================================================================================================================================================================================================================================= */
+.shoppingData{
+    display: flex;
+    flex-direction: row;
+    /* border: 1px black; */
+}
+.payment{
+    margin-left: 50px;
+    height: 256px;
+    width: 370px;
+    /* border: 1px solid black; */
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(115, 115, 115, 0.25);
+    border-radius: 4px;
+    font-family: 'Metropolis';
+}
+.titlePaymentBox{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-bottom: 30px;
+}
+.orderDelivery{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+.orderOrDelivery{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #9B9B9B;
+}
+.amountOfMoney{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #222222;
+}
+.summary{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 30px;
+}
+.shoppingSummary{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+}
+.total{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #DB3022;
+}
+.btnPayment{
+    padding: 8px 108px 8px 108px;
+    background: #DB3022;
+    border-radius: 25px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+/* Modal address ==================================================================================================================================================================================== */
+.modalCheckoutTitle{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+    margin-left: 230px;
+}
+.addingNewAddress{
+    padding: 34px 258px;
+    border: 1px dashed #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #9B9B9B;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 34px;
+    background-color: #fff;
+}
+.addressUserOld{
+    margin-left: 50px;
+    margin-right: 50px;
+    background: #FFFFFF;
+    border: 1px solid #DB3022;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.btnAddressUserold{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #DB3022;
+    background: none !important;
+    border: none;
+    margin-left: 25px;
+    margin-bottom: 30px;
+}
+/* Modal 2 address ==================================================================================================================================================================================== */
+.labelFormModal{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #9B9B9B;
+}
+.placeholderFormModal{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(212, 212, 212, 1);
+}
+.checkboxModalAddress{
+    margin-left: 15px;
+}
+.labelPrimaryAddress{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    color: #9B9B9B;
+    margin-left: 13px;
+}
+.btnCancelNewAddress{
+    border: 1px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 24px;
+    background: #FFFFFF;
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #9B9B9B;
+    padding: 8px 57px;
+}
+.btnSaveNewAddress{
+    box-sizing: border-box;
+    border-radius: 24px;
+    background: #DB3022;
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding: 8px 64px;
+}
+/* modal payment =================================================================================================================================================================================== */
+.modalPaymentTitle{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;/* identical to box height */
+    color: #222222;
+}
+.contentModal{
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 28px;
+}
+.paymentTitle{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+}
+.paymentChoiceModal{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+.imgPayment{
+    object-fit: scale-down;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+.namePayment{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+    /* padding-left: 60px; */
+}
+.checkPayment p{
+    margin-right: 100px;
+}
+@media (max-width: 576px){
+    .content{
+        width: 90%;
+        margin-left: 20px;
+    }
+    .shoppingData{
+        display: flex;
+        flex-direction: column;
+    }
+    .addressUser{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 220px;
+    }
+    .item{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .itemName{
+        margin-left: 0px;
+    }
+    .addingNewAddress{
+        padding: 20px 100px;
+        width: 80%;
+    }
+    .modalCheckoutTitle{
+        margin-left: 50px;
+    }
+    .payment{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,375 @@
+/* Navbar ====================================================================================*/
+.navbar{
+    font-family: 'Metropolis';
+    box-shadow: 0px 6px 40px rgba(173, 173, 173, 0.25);
+}
+.container{
+    background: #FFFFFF;
+}
+/* search bar dan filter */
+.form-inline .search-bar{
+    height: 40px;
+    width: 507px;
+    border: 1px solid #8E8E93;
+    border-radius: 23px;
+}
+.filter{
+    height: 16.7px;
+    width: 15px;
+}
+.filter-search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* login dan signup button */
+.login{
+    /* height: 36px;
+    width: 100px; */
+    padding: 5px 30px !important;
+    background: #DB3022;
+    /* border: 1px solid #9B9B9B; */
+    box-sizing: border-box;
+    border-radius: 24px;
+    text-align: center;
+    color: white !important;
+    font-size: 14px;
+    font-family: 'Metropolis';
+}
+.signup{
+    padding: 5px 26px !important;
+    border: 1px solid #9B9B9B;
+    border-radius: 24px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Metropolis';
+}
+.profile-navbar{
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.btn-filter{
+    /* background: transparent; */
+    /* border: none !important; */
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    border: 1px solid #8E8E93;
+    border-radius: 12px;
+}
+/* Modal =============================================== */
+/* modal content */
+.title-section{
+    font-family: 'Metropolis';
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    color: #222222;
+    margin-bottom: 36px;
+}
+.color-choice{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 46px;
+    /* justify-content: space-evenly; */
+}
+.color{
+    width: 36px;
+    height: 36px;
+    background: black;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 46px;
+}
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+}
+
+.checkmark {
+    height: 36px;
+    width: 36px;
+    /* background-color: red; */
+    -webkit-appearance: none;
+    border-radius: 50%;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    border: 3px solid #fff;
+    margin-left: 20px;
+}
+.checkmark:checked{
+    box-shadow: 0px 0px 0px 1px #DB3022;
+}
+.color-modal-1{
+    background-color: black;
+}
+.color-modal-2{
+    background-color: 0px 0px 0px 100px #fff;
+    box-shadow: 2px 2px 4px #000000
+}
+.color-modal-3{
+    background: #B82222;
+}
+.color-modal-4{
+    background: #BEA9A9;
+}
+.color-modal-5{
+    background: rgba(226, 187, 141, 1);
+}
+.color-modal-6{
+    background: rgba(21, 24, 103, 1);
+}
+/* .checkmark-size {
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    border: 3px solid black;
+    margin-left: 20px;
+} */
+/* .checkmark-size:checked{
+    box-shadow: 0px 0px 0px 1px #DB3022;
+    background-color: #DB3022;
+    color: white;
+} */
+.string-check-box{
+    font-family: Metropolis;
+    background:white;
+    color:black;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    border: 0.4px solid #9B9B9B;
+    margin-right: 20px;
+}
+#size-check-1:checked ~ .size-check-box-1 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}#size-check-2:checked ~ .size-check-box-2 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}#size-check-3:checked ~ .size-check-box-3 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}#size-check-4:checked ~ .size-check-box-4 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}#size-check-5:checked ~ .size-check-box-5 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.size-choice{
+    margin-left: 26px;
+    margin-bottom: 36px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+.size-choice-modal{
+    margin-right: 16px;
+    border: 0.4px solid #9B9B9B;
+    color: black;
+}
+.category-modal{
+    margin-left: 26px;
+    margin-bottom: 36px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+#category-check-1:checked ~ .category-check-box-1 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}#category-check-2:checked ~ .category-check-box-2 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}#category-check-3:checked ~ .category-check-box-3 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}#category-check-4:checked ~ .category-check-box-4 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}#category-check-5:checked ~ .category-check-box-5 {
+    background:red;
+    font-family: Metropolis;
+    color:white;
+    padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.brand-modal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn-brand-category{
+    border: none;
+    /* margin-right: auto; */
+}
+.brand-section{
+    font-family: 'Metropolis';
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    color: #222222;
+    margin-bottom: 3px;
+}
+.brand-category{
+    font-family: Metropolis;
+    font-size: 11px;
+    line-height: 11px;
+    color: #9B9B9B;
+}
+/* .modal-bordering{
+    background: #F4F4F4;
+} */
+/* modal footer */
+.modal-confirm{
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-modal-discard{
+    padding: 10px 50px;
+    background-color: white;
+    border: 1px solid #222222;
+    box-sizing: border-box;
+    border-radius: 24px;
+    font-family: 'Metropolis';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #222222;;
+}
+.btn-modal-apply{
+    padding: 10px 50px;
+    background: #DB3022;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+.searchingProduct{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.searchLogo{
+    background-color: none !important;
+    outline: none;
+    border: none;
+}
+@media (max-width: 576px){
+    .nav-list{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .navbar-collapse form{
+        width: 50%;
+    }
+    .filter-search{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-left: 0px;
+        width: 550px;
+    }
+    .category{
+        margin-left: 35px;
+    }
+}

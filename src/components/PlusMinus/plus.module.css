@@ -1,0 +1,37 @@
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    justify-content: space-between;
+}
+.plus{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(142, 142, 142, 0.25);
+    border-radius: 50%;
+    background-color: none;
+    width: 36px;
+    height: 36px;
+    /* border-radius: 50%; */
+}
+.minus{
+    background: #D5D5D5;
+    border-radius: 50%;
+    background-color: none;
+    width: 36px;
+    height: 36px;
+    /* border-radius: 50%; */
+}
+.number{
+    font-family: Metropolis;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+    margin-top: 10px;
+}
+@media (max-width:576px){
+    .wrapper{
+        width: 100px;
+    }
+}
