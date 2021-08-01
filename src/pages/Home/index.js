@@ -7,27 +7,28 @@ import axios from 'axios'
 const Home = () => {
     const [product, setProduct] = useState([])
     useEffect(()=>{
-        console.log('useEffect dijlaan kan');
-        const url = process.env.REACT_APP_API_URL
-        console.log(url)
-        axios.get(`${url}products?page=1&limit=10&column=updatedAt&sort=desc`)
+        console.log('useEffect dijlaan kan')
+        axios.get(`${process.env.REACT_APP_API_URL}v1/products?page=1&limit=10&column=updatedAt&sort=desc`)
         .then((res) => {
             setProduct(res.data.data.result)
         })
         .catch((err) => {
         })
     }, [])
+    console.log(product)
     const [popular, setPopular] = useState([])
     useEffect(()=>{
-        console.log('useEffect dijlaan kan');
-        axios.get('http://localhost:4000/products?page=1&limit=10')
+        console.log('useEffect popular dijlaan kan')
+        axios.get(`http://localhost:4000/v1/products?page=1&limit=10`)
         .then((res) => {
+            console.log('berhasil')
             setPopular(res.data.data.result)
         })
         .catch((err) => {
+            console.log(err)
         })
     }, [])
-    console.log(popular);
+    console.log('test ' + popular);
     return (
         <div>
             <Navbar/>

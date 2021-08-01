@@ -10,8 +10,8 @@ const Navbar = (props) => {
     const history = useHistory()
     const [input, setInput]=useState('')
     // console.log();
-    const handleSearch =()=>{
-        // e.preventDefault()
+    const handleSearch =(e)=>{
+        e.preventDefault()
         console.log(input)
         history.push(`/search?keyword=${input}`)
     }

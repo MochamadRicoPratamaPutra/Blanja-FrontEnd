@@ -22,7 +22,7 @@ const Search = () => {
         .catch((err) => {
         })
     
-    }, [key])
+    }, [location])
     console.log(product);
     return (
         <div>

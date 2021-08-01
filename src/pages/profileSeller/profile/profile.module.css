@@ -1,0 +1,192 @@
+/* main page ================================================================================================================================================================================ */
+.mainPage{
+    background: #F5F5F5;
+}
+/* navbar vertical ================================================================================================================================================================================ */
+.navVertical{
+    font-family: 'Metropolis';
+}
+.navItem{
+    margin-left: 80px;
+}
+.boxSubNaver{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.backgroundNavVer{
+    background-color: #fff;
+}
+.boxSub{
+    display: flex;
+}
+.collapseBoxSub{
+    display: flex;
+    flex-direction: column;
+}
+.collapseNavVer{
+    text-align: start;
+    text-decoration: none;
+}
+.profileNav{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+.profileImage{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profileName{
+    display: flex;
+    flex-direction: column;
+    margin-left: 14px;
+}
+.navVerticalTitle{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #9B9B9B;
+    text-decoration: none;
+    margin-top: auto;
+}
+.activePage{
+    font-weight: bold;
+    color: #222222;
+}
+.boxImageProfile{
+    background-color: blue;
+    border-radius: 50%;
+    padding: 8px 8px;
+    height: 32px;
+    width: 32px;
+}
+.colorBox1{
+    background: #456BF3;
+}
+.colorBox2{
+    background: #F36F45;
+}
+.colorBox3{
+    background: #F3456F;
+}
+.editProfile{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #9B9B9B;
+    margin-left: 2px;
+    text-decoration: none;
+}
+/* profile ========================================================================================================================================================================== */
+.mainProfile{
+    margin-top: 50px;
+    margin-left: 45px;
+    background: #FFFFFF;
+    border: 1px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 850px;
+    height: 576px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+.mainProfileTitle{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #222222;
+}
+.mainProfileSubTitle{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #9B9B9B;
+}
+.hrMargin{
+    margin-right: 22px;
+    margin-bottom: 34px;
+}
+.mainProfileData{
+    display: flex;
+    flex-direction: row;
+    /* width: 850px;
+    height: 500px; */
+    justify-content: space-between;
+}
+.biodata{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 94px;
+    width:500px;
+}
+.choices{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.saveProfile{
+    background: red;
+    border: none;
+    padding: 8px 33px;
+    background: #DB3022;
+    border-radius: 25px;
+    color: #FFFFFF;
+}
+.photoProfile{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+.photoProfile img{
+    height: 111px;
+    width: 111px;
+    border-radius: 50%;
+}
+.selectingImage{
+    margin-top: 19px;
+    border: 1px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 24px;
+    padding: 8px 26px;
+    text-align: center;
+}
+@media (max-width: 576px){
+    .navItem{
+        margin-left: 0%;
+    }
+    .nav-vertical{
+        width: 100%;
+    }
+    .mainPage{
+        width: 102%;
+    }
+    .mainProfile{
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 90%;
+    }
+    .mainProfileData{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .photoProfile{
+        flex-direction: column;
+        margin-left: 0px;
+        order: -1;
+        margin-bottom: 30px;
+        align-items: center;
+    }
+    .selectingImage{
+        padding: 3px 8px
+    }
+}

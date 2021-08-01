@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Home from './pages/Home'
-import ProfileSeller from './pages/profileSeller/ProfileSelling'
+import SellingProduct from './pages/profileSeller/ProfileSelling'
 import ProfileMyProduct from './pages/profileSeller/ProfileMyProduct'
 import ProfileUpdateProduct from './pages/profileSeller/ProfileUpdateProduct'
 import Product from './pages/Products'
@@ -17,6 +17,8 @@ import Checkout from './pages/Checkout'
 import Search from './pages/Search'
 import ProfileCustomer from './pages/profileUser/profile'
 import ProfileAddress from './pages/profileUser/profileAddress'
+import ProfileOrder from './pages/profileUser/profileOrder'
+import ProfileSeller from './pages/profileSeller/profile'
 class App extends Component{
   constructor(props){
     super(props)
@@ -39,7 +41,7 @@ class App extends Component{
       <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/profile-seller-new-product" component={ProfileSeller}/>
+                <Route exact path="/profile-seller-new-product" component={SellingProduct}/>
                 <Route exact path="/profile-seller-my-product" component={ProfileMyProduct} />
                 <Route exact path="/profile-seller-update-product/:id" component={ProfileUpdateProduct} />
                 <Route exact path="/products/:id" component={Product} />
@@ -55,6 +57,8 @@ class App extends Component{
                 <Route exact path="/search" component={Search} />
                 <Route exact path="/profile" component={ProfileCustomer} />
                 <Route exact path="/profile-address" component={ProfileAddress} />
+                <Route exact path="/profile-order" component={ProfileOrder} />
+                <Route exact path="/profile-seller" component={ProfileSeller} />
                 {/* <Route exact path="/about" component={About} />
                 <Route exact path="/home" component={HomePage} />
                 <Route path="/product/:idproduct" component={Detail} />
