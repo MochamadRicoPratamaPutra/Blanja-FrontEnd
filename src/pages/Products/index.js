@@ -1,57 +1,53 @@
 import React, {useEffect, useState} from 'react'
 import Style from './product.module.css'
 import Star from '../../assets/Star.svg'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Navbar from '../../components/navbar'
 import Card from '../../components/card'
 import PlusMinus from '../../components/PlusMinus'
+import { useDispatch, useSelector } from 'react-redux'
+import { cartBag, checkout } from '../../configs/redux/action/cartAction'
 
 const Product = () => {
     const {id} = useParams()
     const [product, setProduct] = useState([])
-    let idCat
+    const dispatch = useDispatch()
+    const history = useHistory()
     useEffect(()=>{
         console.log('useEffect dijlaan kan');
-        axios.get(`http://localhost:4000/products/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}v1/products/${id}`)
         .then((res) => {
-            idCat = res.data.data.categoryID
             setProduct(res.data.data)
         })
         .catch((err) => {
         })
     }, [id])
-    console.log(idCat)
     const [popular, setPopular] = useState([])
     useEffect(()=>{
         console.log('useEffect dijlaan kan');
-        axios.get('http://localhost:4000/products?page=1&limit=10')
+        axios.get(`${process.env.REACT_APP_API_URL}v1/products?page=1&limit=10`)
         .then((res) => {
             setPopular(res.data.data.result)
         })
         .catch((err) => {
         })
     }, [])
-    const [category, setCategory] = useState([])
-    useEffect(()=>{
-        console.log('useEffect dijlaan kan');
-        axios.get(`http://localhost:4000/category/search=categoryID&keyword=${product.categoryID}`)
-        .then((res) => {
-            setCategory(res.data.data)
-        })
-        .catch((err) => {
-        })
-    }, [idCat])
+    const handleMyBag = (product) => {
+        dispatch(cartBag(product))
+        history.push('/my-bag')
+    }
+    const handleCheckout = (product) =>{
+        dispatch(cartBag(product))
+        history.push('/checkout')
+    }
     console.log(product);
-    console.log(category)
     return (
         <div>
             <Navbar/>
             {product.map((item)=>
                 <main className={Style.container}>
-                    {category.map((item2)=>
-                    <p className={Style.directory}><span><Link to="/" className={Style.directory}>Home</Link></span> > <span><Link to={`category/${item.categoryID}`} className={Style.directory}>Category</Link></span> > {item2.name}</p>
-                    )}
+                    <p className={Style.directory}><span><Link to="/" className={Style.directory}>Home</Link></span> > <span><Link to={`category/${item.categoryID}`} className={Style.directory}>Category</Link></span> > {item.categoryID}</p>
                     <div className={Style.content}>
                         <div className={Style.photo}>
                             <img className={Style.mainPhoto} src={item.imgUrl} alt=""/>
@@ -95,9 +91,9 @@ const Product = () => {
                                 </div>
                             </div>
                             <div className={Style.choice}>
-                                <Link to="#" className={Style.product}>Chat</Link>
-                                <Link to="/my-bag" className={Style.product}>Add bag</Link>
-                                <Link to="/checkout" className={`${Style.product} ${Style.productBuy}`}>Buy Now</Link>
+                                <button className={Style.product}>Chat</button>
+                                <button className={Style.product} onClick={() => handleMyBag(item)}>Add bag</button>
+                                <button className={`${Style.product} ${Style.productBuy}`}  onClick={() => handleCheckout(item)}>Buy Now</button>
                             </div>
                         </div>
                     </div>

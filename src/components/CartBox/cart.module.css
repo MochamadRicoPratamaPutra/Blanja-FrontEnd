@@ -1,0 +1,172 @@
+.titleBag{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 34px;
+    color: #222222;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.containerShop{
+    display: flex;
+    flex-direction: row;
+    border: 1px black;
+}
+/* select */
+.selected{
+    display: flex;
+    flex-direction: row;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(115, 115, 115, 0.25);
+    border-radius: 4px;
+    /* border: 1px solid gray; */
+    padding: 24px 22px;
+    margin-bottom: 20px;
+}
+.selectedOne{
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* margin-left: 20px; */
+}
+.selectedDelete{
+    font-family: Metropolis;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #DB3022;
+    margin-left: 327px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: transparent;
+    border: none !important;
+}
+.selectedTotalItem{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #747070;
+    /* padding-top: 5px; */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.selectedItem{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+    /* text-align: center; */
+    /* padding-top: 5px; */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.formCheckInput{
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/* item */
+.item{
+    margin-bottom: 10px;
+    width: 720px;
+    height: 126px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(115, 115, 115, 0.25);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: 24px 22px;
+    margin-bottom: 10px;
+}
+.formCheckItem{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.itemImage{
+    height: 69px;
+    width: 69px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.itemName{
+    font-family: 'Metropolis';
+}
+.itemTitle{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+.itemBrand{
+    font-family: Metropolis;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: #9B9B9B;
+}
+.itemAmount{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+}
+
+.sizing{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    align-items: center;
+}
+.colMargin{
+    margin-right: 20px;
+}
+.sizeText{
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    padding-top: 20px;
+}
+.itemPrice{
+    font-family: Metropolis;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.check{
+    display: none;
+}
+@media (max-width: 576px){
+    .containerShop{
+        flex-direction: column;
+    }
+    .selected{
+        justify-content: space-evenly;
+        width: 102%;
+    }
+    .item{
+        width: 102%;
+    }
+    .summary{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+}

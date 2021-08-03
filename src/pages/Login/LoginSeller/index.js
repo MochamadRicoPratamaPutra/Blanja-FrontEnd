@@ -2,8 +2,22 @@ import React, { Component } from 'react'
 import Style from '../LoginUser/login.module.css'
 import Logo from '../../../assets/Group 1158.svg'
 import { Link } from 'react-router-dom'
-
+import CustomerSeller from '../../../components/customerSeller'
+import ButtonPrimary from '../../../components/buttonPrimary'
 export class Login extends Component {
+    constructor(){
+        super()
+        this.state = {
+            email:'',
+            password:''
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleSubmit(event) {
+        event.preventDefault();
+        //this.setState({ value: event.target.value });
+        console.log(this.state.email);
+    }
     render() {
         return (
             <div>
@@ -11,16 +25,15 @@ export class Login extends Component {
                     <header>
                         <img src={Logo} alt="Blanja" className={Style.logo}/>
                         <p>Please login with your account</p>
-                        <div className={Style.cusel}>
-                            <Link to="login"><button className={Style.buttonSeller}>Customer</button></Link>
-                            <Link to="#"><button className={Style.buttonCustomer}>Seller</button></Link>
-                        </div>
+                        <CustomerSeller roleAcc="seller" destination="login"/>
                     </header>
                     <div className={Style.login}>
-                        <input type="text" name="Email" id="mail" placeholder="Email" className={`form-control ${Style.mail}`}/>
-                        <input type="text" name="Password" id="pass" placeholder="Password" className={`form-control ${Style.mail}`}/>
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" name="email" id="mail" placeholder="Email" className={`form-control ${Style.mail}`} onChange={e => this.setState({ email : e.target.value })}/>
+                            <input type="password" name="password" id="pass" placeholder="Password" className={`form-control ${Style.mail}`} onChange={e => this.setState({ password : e.target.value })}/>
+                        </form>
                         <Link className={Style.forgot} to="reset-password">Forgot Password?</Link>
-                        <Link to="home"><button className={Style.button1}>Primary</button></Link>
+                        <ButtonPrimary destination='home' type='login' data={this.state} role='seller'/>
                         <p>Dont have a Tokopedia Account? <span><Link className={Style.linkRegister} to='signup-seller'>Register</Link></span></p>
                     </div>
                 </div>

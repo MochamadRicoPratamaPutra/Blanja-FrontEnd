@@ -35,6 +35,7 @@
     width: 378px;
     margin-bottom: 17px;
     border-radius: 5px;
+    object-fit: contain;
 }
 .side{
     width: 378px;
@@ -166,6 +167,7 @@
     line-height: 20px;
     margin-left: 10px;
     color: black;
+    background: white;
 }
 .product:hover{
     text-decoration: none;

@@ -54,6 +54,10 @@
     text-decoration: none;
     margin-top: auto;
 }
+.navVerticalTitle:hover{
+    text-decoration: none;
+    color: black;
+}
 .activePage{
     font-weight: bold;
     color: #222222;
@@ -83,6 +87,9 @@
     margin-left: 2px;
     text-decoration: none;
 }
+.btnCategory{
+    background: none;
+}
 /* profile ========================================================================================================================================================================== */
 .mainInventory{
     margin-top: 50px;
@@ -94,6 +101,7 @@
     width: 850px;
     height: 234px;
     padding-left: 30px;
+    padding-right: 30px;
     padding-top: 30px;
 }
 .mainDetail{
@@ -106,6 +114,7 @@
     width: 850px;
     height: 432px;
     padding-left: 30px;
+    padding-right: 30px;
     padding-top: 30px;
 }
 .mainPhoto{
@@ -118,6 +127,7 @@
     width: 850px;
     height: 529px;
     padding-left: 30px;
+    padding-right: 30px;
     padding-top: 30px;
 }
 .itemPhoto{
@@ -174,7 +184,8 @@
     border: 1px solid #D4D4D4;
     box-sizing: border-box;
     border-radius: 4px;
-    margin-right: 30px;
+    /* margin-right: 30px; */
+    /* padding-right: 30px; */
 }
 .mainProfileTitle{
     font-style: normal;
@@ -191,7 +202,7 @@
     color: #9B9B9B;
 }
 .hrMargin{
-    margin-right: 22px;
+    /* margin-right: 22px; */
     margin-bottom: 34px;
 }
 .mainProfileData{
@@ -249,7 +260,7 @@
     color: white;
 }
 @media (max-width: 576px){
-    .nav-item{
+    .navItem{
         margin-left: 0%;
     }
     .nav-vertical{
@@ -259,17 +270,26 @@
         width: 95%;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 30px;
+        padding-right: 30px;
         /* height: 90%; */
     }
     .mainDetail{
         width: 95%;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 30px;
+        padding-right: 30px;
     }
     .mainPhoto{
         width: 95%;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .itemPhoto{
+        margin-right: 0px;
     }
     .mainItemPhoto{
         padding: 20px 21px;

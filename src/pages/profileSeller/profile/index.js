@@ -13,14 +13,14 @@ const ProfileSeller = () => {
     return (
         <div>
             <Navbar/>
-            <div class="row no-gutter mt-0 nav-vertical">
+            <div class="row no-gutter mt-0 nav-vertical ml-0 mr-0">
                 <div className={`col-md-3 ${Style.backgroundNavVer} mt-2 pr-3 pt-4`}>
                     <ul className="nav flex-column ml-3 mb-5">
                         <li className={Style.navItem}>
                             <div className={`nav-link mb-5 ${Style.profileNav}`} aria-current="page">
                                 <img className={Style.profileImage} src={ProfileBig} alt=""/>
                                 <div className={Style.profileName}>
-                                    <Link className={`${Style.navVerticalTitle} ${Style.activePage}`} to="profile.html">Jonas Mikael</Link>
+                                    <Link className={`${Style.navVerticalTitle} ${Style.activePage}`} to="profile">Jonas Mikael</Link>
                                     <div className={Style.editingProfile}>
                                         <img src={Pen} alt=""/>
                                         <Link to="#" className={Style.editProfile}>Ubah profile</Link>
@@ -32,46 +32,46 @@ const ProfileSeller = () => {
                             <div className={Style.boxSubNaver}>
                                 <div className={Style.boxSub}>
                                     <img className={`${Style.boxImageProfile} ${Style.colorBox1}`} src={Home} alt=""/>
-                                    <Link className={`nav-link ${Style.navVerticalTitle} ${Style.activePage}`} to="profile-seller.html">Store</Link>
+                                    <Link className={`nav-link ${Style.navVerticalTitle} ${Style.activePage}`} to="profile-seller">Store</Link>
                                 </div>                        
                                 <div className={Style.collapseBoxSub}>
-                                    <button className={`btn ${Style.btnUserCategory}`} type="button" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
+                                    <button className={`btn ${Style.btnCategory}`} type="button" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
                                         <img src={Collapse} alt=""/>
                                     </button>
                                 </div>
                             </div>
                             <div className="collapse" id="collapseUser">
-                                <Link to="profile-seller.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle} ${Style.activePage}`}>Store Profile</Link>
+                                <Link to="profile-seller" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle} ${Style.activePage}`}>Store Profile</Link>
                             </div>
                         </li>
                         <li className={Style.navItem}>
                             <div className={Style.boxSubNaver}>
                                 <div className={Style.boxSub}>
                                     <img className={`${Style.boxImageProfile} ${Style.colorBox2}`} src={Product} alt=""/>
-                                    <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller-my-product.html">Product</Link>    
+                                    <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller-my-product">Product</Link>    
                                 </div>
-                                <button className={`btn ${Style.btnProductCategory}`} type="button" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="false" aria-controls="collapseProduct">
+                                <button className={`btn ${Style.btnCategory}`} type="button" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="false" aria-controls="collapseProduct">
                                     <img src={Collapse} alt=""/>
                                 </button>
                             </div>
                             <div className="collapse" id="collapseProduct">
-                                <Link to="profile-seller-my-product.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>My product</Link>
-                                <Link to="profile-seller-selling-product.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle} `}>Selling product</Link>
+                                <Link to="profile-seller-my-product" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>My product</Link>
+                                <Link to="profile-seller-new-product" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle} `}>Selling product</Link>
                             </div>
                         </li>
                         <li className={Style.navItem}>
                             <div className={Style.boxSubNaver}>
                                 <div className={Style.boxSub}>
                                     <img className={`${Style.boxImageProfile} ${Style.colorBox3}`} src={Cart} alt=""/>
-                                    <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller-order.html" tabindex="-1" aria-disabled="true">Order</Link>
+                                    <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller-order" tabindex="-1" aria-disabled="true">Order</Link>
                                 </div>
-                                <button className={`btn ${Style.btnOrderCategory}`} type="button" data-toggle="collapse" data-target="#collapseOrder" aria-expanded="false" aria-controls="collapseOrder">
+                                <button className={`btn ${Style.btnCategory}`} type="button" data-toggle="collapse" data-target="#collapseOrder" aria-expanded="false" aria-controls="collapseOrder">
                                     <img src={Collapse} alt=""/>
                                 </button>
                             </div>
                             <div className="collapse" id="collapseOrder">
-                                <Link to="profile-seller-order.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>My order</Link>
-                                <Link to="profile-seller-order-cancel.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>Order cancel</Link>
+                                <Link to="profile-seller-order" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>My order</Link>
+                                <Link to="profile-seller-order-cancel" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>Order cancel</Link>
                             </div>
                         </li>
                     </ul>
@@ -108,17 +108,17 @@ const ProfileSeller = () => {
                                     </div>
                                 </div>
                                 <div class="row mb-4">
-                                    <div class="col">
+                                    <div class="col-6">
                                         <p class={Style.mainProfileSubTitle}>Gender</p>
                                     </div>
-                                    <div class="row ml-auto">
-                                        <div class="col-6">
+                                    <div class="row ml-auto mr-auto">
+                                        <div class={`col-6 ${Style.gender}`}>
                                             <input class={Style.formCheckInput} type="radio" name="gender-choices" id="lakiLaki"/>
                                             <label class={Style.formCheckLabel} for="lakiLaki">
                                                 Laki-laki
                                             </label>
                                         </div>
-                                        <div class="col-6">
+                                        <div class={`col-6 ${Style.gender}`}>
                                             <input class={Style.formCheckInput} type="radio" name="gender-choices" id="perempuan"/>
                                             <label class={Style.formCheckLabel} for="perempuan">
                                                 Perempuan

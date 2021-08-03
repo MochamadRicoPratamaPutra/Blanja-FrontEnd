@@ -16,11 +16,13 @@ class App extends Component {
         this.setState({ clicks: this.state.clicks + 1 });
     }
     DecreaseItem = () => {
-        if (this.state.clicks===0) {
-            this.setState({clicks: this.state.clicks=0})
-        }else{
-            this.setState({ clicks: this.state.clicks - 1 });
-        }
+        this.setState((state, props) =>{
+            if (state.clicks===0) {
+                return {clicks: state.clicks=0}
+            }else{
+                return { clicks: state.clicks - 1 }
+            }
+        })
     }
     ToggleClick = () => {
         this.setState({ show: !this.state.show });

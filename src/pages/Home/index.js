@@ -3,6 +3,7 @@ import Navbar from '../../components/navbar'
 import Style from './home.module.css'
 import Card from '../../components/card'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const Home = () => {
     const [product, setProduct] = useState([])
@@ -19,7 +20,7 @@ const Home = () => {
     const [popular, setPopular] = useState([])
     useEffect(()=>{
         console.log('useEffect popular dijlaan kan')
-        axios.get(`http://localhost:4000/v1/products?page=1&limit=10`)
+        axios.get(`${process.env.REACT_APP_API_URL}v1/products?page=1&limit=10`)
         .then((res) => {
             console.log('berhasil')
             setPopular(res.data.data.result)
@@ -28,12 +29,14 @@ const Home = () => {
             console.log(err)
         })
     }, [])
+    const state = useSelector(state => state)
     console.log('test ' + popular);
     return (
         <div>
             <Navbar/>
             <div className={Style.container}>
                 <h1 className={Style.category}>New</h1>
+                <h1>{JSON.stringify(state)}</h1>
                 <p className={Style.category}>You've never seen it before</p>
                 <div className={Style.cardbox}>{product.map((item)=>
                     <Card name={item.name} price={item.price} imgUrl={item.imgUrl} id={item.id}/>

@@ -9,7 +9,7 @@ const Table = (props) => {
     const history = useHistory()
     useEffect(()=>{
         console.log('useEffect dijlaan kan');
-        axios.get('http://localhost:4000/products')
+        axios.get(`${process.env.REACT_APP_API_URL}v1/products`)
         .then((res) => {
             setProduct(res.data.data)
         })

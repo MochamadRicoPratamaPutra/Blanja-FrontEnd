@@ -47,7 +47,7 @@ const index = () => {
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-9 main-page">
+                <div class={`col-md-9 ${Style.mainPage}`}>
                     <div class={Style.mainProfile}>
                         <Tabs/>
                     </div>

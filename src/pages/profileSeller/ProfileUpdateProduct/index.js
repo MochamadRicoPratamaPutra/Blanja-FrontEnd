@@ -24,7 +24,7 @@ const SellingProduct = () => {
     const {id} = useParams()
     useEffect(()=>{
         console.log('useEffect dijlaan kan');
-        axios.get(`http://localhost:4000/products/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}v1/products/${id}`)
         .then((res) => {
             setProducts(res.data.data)
         })
@@ -75,7 +75,7 @@ const SellingProduct = () => {
                                     <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller.html">Store</Link>
                                 </div>                        
                                 <div className={Style.collapseBoxSub}>
-                                    <button className={`btn ${Style.btnUserCategory}`} type="button" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
+                                    <button className={`btn ${Style.btnCategory}`} type="button" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
                                         <img src={Collapse} alt=""/>
                                     </button>
                                 </div>
@@ -90,7 +90,7 @@ const SellingProduct = () => {
                                     <img className={`${Style.boxImageProfile} ${Style.colorBox2}`} src={Product} alt=""/>
                                     <Link className={`nav-link ${Style.navVerticalTitle} ${Style.activePage}`} to="profile-seller-my-product.html">Product</Link>    
                                 </div>
-                                <button className={`btn ${Style.btnProductCategory}`} type="button" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="false" aria-controls="collapseProduct">
+                                <button className={`btn ${Style.btnCategory}`} type="button" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="false" aria-controls="collapseProduct">
                                     <img src={Collapse} alt=""/>
                                 </button>
                             </div>
@@ -105,7 +105,7 @@ const SellingProduct = () => {
                                     <img className={`${Style.boxImageProfile} ${Style.colorBox3}`} src={Cart} alt=""/>
                                     <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller-order.html" tabindex="-1" aria-disabled="true">Order</Link>
                                 </div>
-                                <button className={`btn ${Style.btnOrderCategory}`} type="button" data-toggle="collapse" data-target="#collapseOrder" aria-expanded="false" aria-controls="collapseOrder">
+                                <button className={`btn ${Style.btnCategory}`} type="button" data-toggle="collapse" data-target="#collapseOrder" aria-expanded="false" aria-controls="collapseOrder">
                                     <img src={Collapse} alt=""/>
                                 </button>
                             </div>

@@ -346,9 +346,12 @@
     flex-wrap: nowrap;
 }
 .searchLogo{
-    background-color: none !important;
+    background: none !important;
     outline: none;
     border: none;
+}
+input[type="button"] {
+    outline: none;
 }
 @media (max-width: 576px){
     .nav-list{

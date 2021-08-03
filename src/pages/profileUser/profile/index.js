@@ -12,7 +12,7 @@ const Profile = () => {
     return (
         <div>
             <Navbar/>
-            <div class="row no-gutter mt-0 nav-vertical">
+            <div class="row no-gutter mt-0 nav-vertical ml-0 mr-0">
                 <div class={`col-md-3 ${Style.backgroundNavVer} mt-2 pr-3 pt-4`}>
                     <ul class={`nav flex-column ml-3 mb-5`}>
                         <li class={Style.navItem}>

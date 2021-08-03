@@ -54,6 +54,10 @@
     text-decoration: none;
     margin-top: auto;
 }
+.navVerticalTitle:hover{
+    text-decoration: none;
+    color: black;
+}
 .activePage{
     font-weight: bold;
     color: #222222;
@@ -82,6 +86,9 @@
     color: #9B9B9B;
     margin-left: 2px;
     text-decoration: none;
+}
+.btnCategory{
+    background: none;
 }
 /* profile ========================================================================================================================================================================== */
 .mainInventory{
@@ -247,38 +254,18 @@
     color: white;
 }
 @media (max-width: 576px){
-    .nav-item{
+    .navItem{
         margin-left: 0%;
     }
     .nav-vertical{
         width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     .mainInventory{
-        width: 95%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         /* height: 90%; */
-    }
-    .mainDetail{
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .mainPhoto{
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .mainItemPhoto{
-        padding: 20px 21px;
-    }
-    .subItemPhoto{
-        padding: 10px 11px;
-    }
-    .form-control{
-        width: 90%;
-    }
-    textarea.form-control{
-        width: 100%;
     }
 }

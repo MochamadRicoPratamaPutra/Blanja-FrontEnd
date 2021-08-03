@@ -3,7 +3,7 @@
     background: #F5F5F5;
 }
 /* navbar vertical ================================================================================================================================================================================ */
-.nav-vertical{
+.navVertical{
     font-family: 'Metropolis';
 }
 .navItem{
@@ -102,80 +102,8 @@
     width: 850px;
     height: 576px;
     padding-left: 30px;
+    padding-right: 30px;
     padding-top: 30px;
-}
-.mainProfileTitle{
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    color: #222222;
-}
-.mainProfileSubTitle{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
-    color: #9B9B9B;
-}
-.hrMargin{
-    margin-right: 22px;
-    margin-bottom: 34px;
-}
-.mainProfileData{
-    display: flex;
-    flex-direction: row;
-    /* width: 850px;
-    height: 500px; */
-    justify-content: space-between;
-}
-.biodata{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 94px;
-    width:500px;
-}
-.choices{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-.saveProfile{
-    background: red;
-    border: none;
-    padding: 8px 33px;
-    background: #DB3022;
-    border-radius: 25px;
-    color: #FFFFFF;
-}
-.photoProfile{
-    display: flex;
-    flex-direction: column;
-    margin-right: 30px;
-}
-.photoProfile img{
-    height: 111px;
-    width: 111px;
-    border-radius: 50%;
-}
-.selectingImage{
-    margin-top: 19px;
-    border: 1px solid #9B9B9B;
-    box-sizing: border-box;
-    border-radius: 24px;
-    padding: 8px 26px;
-    text-align: center;
-}
-.gender{
-    display: flex;
-    align-items: center;
-    /* margin-left: 2px; */
-    /* text-align: center; */
-    /* border: 1px solid black; */
-}
-.formCheckLabel{
-    margin-left: 5px;
-    margin-top: 7px;
 }
 @media (max-width: 576px){
     .navItem{
@@ -183,35 +111,14 @@
     }
     .nav-vertical{
         width: 100%;
-        margin-left: 0px;
-        margin-right: 0px;
     }
     .mainPage{
-        width: 100%;
-    }
-    .backgroundNavVer{
-        width: 100%;
+        width: 102%;
     }
     .mainProfile{
-        width: 100%;
+        width: 98%;
         margin-left: auto;
         margin-right: auto;
         height: 90%;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .mainProfileData{
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .photoProfile{
-        flex-direction: column;
-        margin-left: 0px;
-        order: -1;
-        margin-bottom: 30px;
-        align-items: center;
-    }
-    .selectingImage{
-        padding: 3px 8px
     }
 }

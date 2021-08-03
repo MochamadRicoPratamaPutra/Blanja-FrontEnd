@@ -1,13 +1,14 @@
 import React from 'react'
 import Navbar from '../../components/navbar'
 import Style from './checkout.module.css'
-import Item1 from '../../assets/gez-xavier-mansfield-b34E1vh1tYU-unsplash 1.png'
-import Item2 from '../../assets/kemal-alkan-_BDBEP0ePQc-unsplash 1.jpg'
+import { useSelector } from 'react-redux'
 import Gopay from '../../assets/gopay.png'
 import PosIndonesia from '../../assets/pos.png'
 import MasterCard from '../../assets/mastercard.png'
+import CartBox from '../../components/CartBox'
 
 const Checkout = () => {
+    const {product, totalPrice} = useSelector(state => state.cart)
     return (
         <div>
             <Navbar/>
@@ -26,36 +27,23 @@ const Checkout = () => {
                                 Choose another address
                             </button>                  
                         </div>
-                        <div className={Style.item}>
-                            <img className={Style.itemImage} src={Item1} alt="item1"/>
-                            <div className={Style.itemName}>
-                                <p className={Style.itemTitle}>Men's formal suit - Black</p>
-                                <p className={Style.itemBrand}>Zalora Cloth</p>
-                            </div>
-                            <p className={Style.itemPrice}>$20.0</p>
-                        </div>
-                        <div className={Style.item}>
-                            <img className={Style.itemImage} src={Item2} alt="item2"/>
-                            <div className={Style.itemName}>
-                                <p className={Style.itemTitle}>Men's formal suit - Black</p>
-                                <p className={Style.itemBrand}>Zalora Cloth</p>
-                            </div>
-                            <p className={Style.itemPrice}>$20.0</p>
-                        </div>
+                        {product.map((item)=>
+                            <CartBox name={item.name} img={item.imgUrl} price={item.price} type='checkout'/>
+                        )}
                     </section>
                     <section className={Style.payment}>
                         <p className={Style.titlePaymentBox}>Shopping summary</p>
                         <div className={Style.orderDelivery}>
                             <p className={Style.orderOrDelivery}>Order</p>
-                            <p className={Style.amountOfMoney}>$40.0</p>
+                            <p className={Style.amountOfMoney}>Rp. {totalPrice}</p>
                         </div>
                         <div className={Style.orderDelivery}>
                             <p className={Style.orderOrDelivery}>Delivery</p>
-                            <p className={Style.amountOfMoney}>$5.0</p>
+                            <p className={Style.amountOfMoney}>Rp. 5000</p>
                         </div>
                         <div className={Style.summary}>
                             <p className={Style.shoppingSummary}>Shopping summary</p>
-                            <p className={Style.total}>$45.0</p>
+                            <p className={Style.total}>Rp. {totalPrice + 5000}</p>
                         </div>
                         <button type="button" className={`btn ${Style.btnPayment}`} data-toggle="modal" data-target="#modalPayment">
                             Select payment
@@ -192,18 +180,18 @@ const Checkout = () => {
                                 <p className={Style.paymentTitle}>Shopping summary</p>
                                 <div className={Style.orderDelivery}>
                                     <p className={Style.orderOrDelivery}>Order</p>
-                                    <p className={Style.amountOfMoney}>$40.0</p>
+                                    <p className={Style.amountOfMoney}>Rp. {totalPrice}</p>
                                 </div>
                                 <div className={Style.orderDelivery}>
                                     <p className={Style.orderOrDelivery}>Delivery</p>
-                                    <p className={Style.amountOfMoney}>$5.0</p>
+                                    <p className={Style.amountOfMoney}>Rp. 5000</p>
                                 </div>
                             </div>
                         </div>
                         <div className="modal-footer">
                             <div className={`footerSummary mr-auto ml-4`}>
                                 <p className={Style.paymentTitle}>Shopping summary</p>
-                                <p className={Style.total}>$45.0</p>
+                                <p className={Style.total}>Rp. {totalPrice + 5000}</p>
                             </div>
                             <button type="button" className={`Style.btn ${Style.btnSaveNewAddress}`} data-dismiss="modal">Buy</button>
                         </div>

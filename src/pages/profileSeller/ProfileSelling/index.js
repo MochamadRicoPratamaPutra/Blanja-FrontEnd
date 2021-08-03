@@ -32,7 +32,7 @@ const SellingProduct = () => {
         form.stock = parseInt(form.stock)
         form.categoryID = parseInt(form.categoryID)
         console.log(form);
-        axios.post('http://localhost:4000/products/', form)
+        axios.post(`${process.env.REACT_APP_API_URL}/v1/products`, form)
         .then((res)=>{
             alert('success making new entry for product')
         })
@@ -48,7 +48,7 @@ const SellingProduct = () => {
                             <div className={`nav-link mb-5 ${Style.profileNav}`} aria-current="page">
                                 <img className={Style.profileImage} src={Profile} alt=""/>
                                 <div className={Style.profileName}>
-                                    <Link className={`${Style.navVerticalTitle} ${Style.activePage}`} to="profile.html">Jonas Mikael</Link>
+                                    <Link className={`${Style.navVerticalTitle} ${Style.activePage}`} to="profile">Jonas Mikael</Link>
                                     <div className={Style.editingProfile}>
                                         <img src={Edit} alt=""/>
                                         <Link to="#" className={Style.editProfile}>Ubah profile</Link>
@@ -60,46 +60,46 @@ const SellingProduct = () => {
                             <div className={Style.boxSubNaver}>
                                 <div className={Style.boxSub}>
                                     <img className={`${Style.boxImageProfile} ${Style.colorBox1}`} src={Home} alt=""/>
-                                    <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller.html">Store</Link>
+                                    <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller">Store</Link>
                                 </div>                        
                                 <div className={Style.collapseBoxSub}>
-                                    <button className={`btn ${Style.btnUserCategory}`} type="button" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
+                                    <button className={`btn ${Style.btnCategory}`} type="button" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
                                         <img src={Collapse} alt=""/>
                                     </button>
                                 </div>
                             </div>
                             <div className="collapse" id="collapseUser">
-                                <Link to="profile-seller.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>Store Profile</Link>
+                                <Link to="profile-seller" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>Store Profile</Link>
                             </div>
                         </li>
                         <li className={Style.navItem}>
                             <div className={Style.boxSubNaver}>
                                 <div className={Style.boxSub}>
                                     <img className={`${Style.boxImageProfile} ${Style.colorBox2}`} src={Product} alt=""/>
-                                    <Link className={`nav-link ${Style.navVerticalTitle} ${Style.activePage}`} to="profile-seller-my-product.html">Product</Link>    
+                                    <Link className={`nav-link ${Style.navVerticalTitle} ${Style.activePage}`} to="profile-seller-my-product">Product</Link>    
                                 </div>
-                                <button className={`btn ${Style.btnProductCategory}`} type="button" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="false" aria-controls="collapseProduct">
+                                <button className={`btn ${Style.btnCategory}`} type="button" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="false" aria-controls="collapseProduct">
                                     <img src={Collapse} alt=""/>
                                 </button>
                             </div>
                             <div className="collapse" id="collapseProduct">
-                                <Link to="profile-seller-my-product.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>My product</Link>
-                                <Link to="profile-seller-selling-product.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle} ${Style.activePage}`}>Selling product</Link>
+                                <Link to="profile-seller-my-product" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>My product</Link>
+                                <Link to="profile-seller-selling-product" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle} ${Style.activePage}`}>Selling product</Link>
                             </div>
                         </li>
                         <li className={Style.navItem}>
                             <div className={Style.boxSubNaver}>
                                 <div className={Style.boxSub}>
                                     <img className={`${Style.boxImageProfile} ${Style.colorBox3}`} src={Cart} alt=""/>
-                                    <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller-order.html" tabindex="-1" aria-disabled="true">Order</Link>
+                                    <Link className={`nav-link ${Style.navVerticalTitle}`} to="profile-seller-order" tabindex="-1" aria-disabled="true">Order</Link>
                                 </div>
-                                <button className={`btn ${Style.btnOrderCategory}`} type="button" data-toggle="collapse" data-target="#collapseOrder" aria-expanded="false" aria-controls="collapseOrder">
+                                <button className={`btn ${Style.btnCategory}`} type="button" data-toggle="collapse" data-target="#collapseOrder" aria-expanded="false" aria-controls="collapseOrder">
                                     <img src={Collapse} alt=""/>
                                 </button>
                             </div>
                             <div className="collapse" id="collapseOrder">
-                                <Link to="profile-seller-order.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>My order</Link>
-                                <Link to="profile-seller-order-cancel.html" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>Order cancel</Link>
+                                <Link to="profile-seller-order" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>My order</Link>
+                                <Link to="profile-seller-order-cancel" className={`${Style.collapseNavVer} ${Style.boxSubNaver} ${Style.navVerticalTitle}`}>Order cancel</Link>
                             </div>
                         </li>
                     </ul>

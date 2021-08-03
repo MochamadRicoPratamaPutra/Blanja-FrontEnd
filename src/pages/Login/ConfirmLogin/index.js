@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Style from '../LoginUser/login.module.css'
 import Logo from '../../../assets/Group 1158.svg'
-import { Link } from 'react-router-dom'
-
+import ButtonPrimary from '../../../components/buttonPrimary'
 export class Login extends Component {
     render() {
         return (
@@ -16,8 +15,7 @@ export class Login extends Component {
                     <div className={Style.login}>
                         <input type="text" name="mail" id="mail" placeholder="Email" className={`form-control ${Style.mail}`}/>
                         <input type="text" name="pass" id="pass" placeholder="Password" className={`form-control ${Style.mail}`}/>
-                        <Link className={Style.forgot} to="confirm-login">Forgot Password?</Link>
-                        <Link to="home"><button className={Style.button1}>Primary</button></Link>
+                        <ButtonPrimary destination="home"/>
                     </div>
                 </div>
             </div>

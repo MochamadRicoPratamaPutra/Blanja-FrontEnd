@@ -9,13 +9,13 @@ const Search = () => {
     const [product, setProduct] = useState([])
     const location = useLocation()
     const [text, setText]=useState('')
-    const key = qs.parse(location.search)
+    // const key = qs.parse(location.search)
     console.log(location);
     useEffect(() => {
         console.log('ini use effect');
         const {keyword} = qs.parse(location.search)
         setText(keyword)
-        axios.get(`http://localhost:4000/products?search=name&keyword=${keyword}`)
+        axios.get(`${process.env.REACT_APP_API_URL}v1/products?search=name&keyword=${keyword}`)
         .then((res) => {
             setProduct(res.data.data)
         })
