@@ -1,28 +1,50 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Style from './profile.module.css'
-import ProfileBig from '../../../assets/christian-buehner-DItYlc26zVI-unsplash 1.png'
 import Pen from '../../../assets/pen-profile.png'
 import User from '../../../assets/user 1.svg'
 import Map from '../../../assets/map-pin (3) 1.svg'
 import Clipboard from '../../../assets/clipboard 1.svg'
-import Navbar from '../../../components/navbar'
-
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
+import { editProfile } from '../../../configs/redux/action/userAction'
 const Profile = () => {
+    // const dispatch = useDispatch()
+    const user = useSelector(state => state.user.profile)
+    const history = useHistory()
+    const dispatch = useDispatch()
+    // const [imagePreview, setimagePreview] = useState('')
+    let img = false
+    const handleChange = (e)=>{
+        dispatch({type: "CHANGE_VALUE", payload: {[e.target.name]: e.target.value}})
+    }
+    const handleInputFile = (e) => {
+        console.log(e.target.file)
+        img = URL.createObjectURL(e.target.files[0])
+        console.log(img)
+        dispatch({type: "CHANGE_VALUE", payload: {[e.target.name]: e.target.files}})
+    }
+    const handleLogout = () => {
+        localStorage.removeItem('token')
+        history.push('/login')
+    }
+    const handleSubmit = () => {
+        dispatch(editProfile(user))
+    }
     return (
         <div>
-            <Navbar/>
             <div class="row no-gutter mt-0 nav-vertical ml-0 mr-0">
                 <div class={`col-md-3 ${Style.backgroundNavVer} mt-2 pr-3 pt-4`}>
                     <ul class={`nav flex-column ml-3 mb-5`}>
                         <li class={Style.navItem}>
                             <div class={`nav-link mb-5 ${Style.profileNav}`} aria-current="page">
-                                <img class={Style.profileImage} src={ProfileBig} alt=""/>
+                                <img class={Style.profileImage} src={img ? img : user.profilePicture} alt=""/>
                                 <div class={Style.profileName}>
-                                    <Link class={`${Style.navVerticalTitle} ${Style.activePage}`} to="profile">Jonas Mikael</Link>
+                                    <Link class={`${Style.navVerticalTitle} ${Style.activePage}`} to={`/profile/${user.id}`}>{user.name.slice(0, 13)}</Link>
                                     <div class={Style.editingProfile}>
                                         <img src={Pen} alt=""/>
-                                        <Link to="#" class={Style.editProfile}>Ubah profile</Link>
+                                        <Link to={`/profile/${user.id}`} class={Style.editProfile}>Ubah profile</Link>
                                     </div>
                                 </div>
                             </div>
@@ -30,19 +52,19 @@ const Profile = () => {
                         <li class={`${Style.navItem} ${Style.active}`}>
                             <div class={Style.boxSubNaver}>
                                 <img class={`${Style.boxImageProfile} ${Style.colorBox1}`} src={User} alt=""/>
-                                <Link class={`nav-link ${Style.navVerticalTitle} ${Style.activePage}`} to="profile">My Account</Link>
+                                <Link class={`nav-link ${Style.navVerticalTitle} ${Style.activePage}`} to={`/profile/${user.id}`}>My Account</Link>
                             </div>
                         </li>
                         <li class={Style.navItem}>
                             <div class={Style.boxSubNaver}>
                                 <img class={`${Style.boxImageProfile} ${Style.colorBox2}`} src={Map} alt=""/>
-                                <Link class={`nav-link ${Style.navVerticalTitle}`} to="profile-address">Shipping & address</Link>
+                                <Link class={`nav-link ${Style.navVerticalTitle}`} to={`/profile-address/${user.id}`}>Shipping & address</Link>
                             </div>
                         </li>
                         <li class={Style.navItem}>
                             <div class={Style.boxSubNaver}>
                                 <img class={`${Style.boxImageProfile} ${Style.colorBox3}`} src={Clipboard} alt=""/>
-                                <Link class={`nav-link ${Style.navVerticalTitle}`} to="profile-order" tabindex="-1" aria-disabled="true">My order</Link>
+                                <Link class={`nav-link ${Style.navVerticalTitle}`} to={`/profile-order/${user.id}`} tabindex="-1" aria-disabled="true">My order</Link>
                             </div>
                         </li>
                     </ul>
@@ -59,7 +81,8 @@ const Profile = () => {
                                         <label class={Style.mainProfileSubTitle} for="name">Name</label>
                                     </div>
                                     <div class="col">
-                                        <input type="text" name="name" id="name" placeholder="Name" class="form-control"/>
+                                        <input type="text" name="name" id="name" value={user.name}
+                                        class="form-control" onChange={handleChange}/>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -67,7 +90,8 @@ const Profile = () => {
                                         <label class={Style.mainProfileSubTitle} for="name">Email</label>
                                     </div>
                                     <div class="col">
-                                        <input type="text" name="email" id="name" placeholder="Email" class="form-control"/>
+                                        <input type="text" name="email" id="name" placeholder="Email" class="form-control"
+                                        value={user.email} onChange={handleChange}/>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -75,16 +99,17 @@ const Profile = () => {
                                         <label class={Style.mainProfileSubTitle} for="name">Phone Number</label>
                                     </div>
                                     <div class="col">
-                                        <input type="text" name="phoneNumber" id="name" placeholder="Phone number" class="form-control"/>
+                                        <input type="text" name="phoneNumber" id="name" placeholder="Phone number" 
+                                        class="form-control" value={user.phoneNumber} onChange={handleChange}/>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
-                                    <div class="col">
+                                    <div class="col-6">
                                         <p class={Style.mainProfileSubTitle}>Gender</p>
                                     </div>
-                                    <div class="row ml-auto">
+                                    <div class="col row ml-auto">
                                         <div class="col-6">
-                                            <input class={Style.formCheckInput} type="radio" name="gender-choices" id="lakiLaki"/>
+                                            <input class={Style.formCheckInput} type="radio" name="gender-choices" id="lakiLaki" defaultChecked/>
                                             <label class={Style.formCheckLabel} for="lakiLaki">
                                                 Laki-laki
                                             </label>
@@ -160,14 +185,17 @@ const Profile = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class={`${Style.saveProfile} mr-auto ml-auto mt-5`}>Save</button>
+                                <button type="button" class={`${Style.saveProfile} mr-auto ml-auto mt-5`} onClick={handleSubmit}>Save</button>
                             </section>
                             <section class={Style.photoProfile}>
-                                <img src={ProfileBig} alt=""/>
-                                <button type="button" class={`${Style.mainProfileSubTitle} ${Style.selectingImage}`}>Select image</button>
+                                <img src={user.profilePicture} alt=""/>
+                                <button type="button" class={`${Style.mainProfileSubTitle} ${Style.selectingImage}`}><input type='file' name='profilePicture' onChange={handleInputFile}/>Select image</button>
                             </section>
                         </section>
                     </main>
+                    <div>
+                        <button type="button" class={`${Style.saveProfile} ml-5 mt-5`} onClick={handleLogout}>Logout</button>
+                    </div>
                 </div>
             </div>
         </div>

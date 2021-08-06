@@ -26,6 +26,24 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 profile: action.payload
             }
+        case 'RENEW_PASS':
+            return {
+                ...state,
+                profile: action.payload
+            }
+        case 'CHANGE_VALUE':
+            return{
+                ...state,
+                profile: {
+                    ...state.profile,
+                    ...action.payload
+                }
+        }
+        case 'UPDATE_USER':
+            return{
+                ...state,
+                profile: action.payload
+            }
         default:
             return state
     }

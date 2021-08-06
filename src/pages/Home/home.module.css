@@ -20,6 +20,34 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+.seeMore{
+    margin-right: 150px;
+    color: black;
+    text-align: end;
+    margin-bottom: 30px;
+}
+.seeMore:hover{
+    text-decoration: none;
+    color: black;
+}
+.notDisplay{
+    display: none;
+}
+.pagination{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+/* .pagination Link{
+    margin-left: 20px;
+}
+.pagination p{
+    margin-left: 20px;
+    margin-right: 20px;
+} */
 @media (max-width: 576px){
     .container{
         margin-left: 30px;

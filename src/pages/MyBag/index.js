@@ -1,14 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Style from './bag.module.css'
-import Navbar from '../../components/navbar'
 import CartBox from '../../components/CartBox'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { deleteCart } from '../../configs/redux/action/cartAction'
 const Bag = () => {
     const {product, totalPrice} = useSelector(state => state.cart)
+    const dispatch = useDispatch()
+    const handleDelete = () => {
+        dispatch(deleteCart())
+    }
     return (
         <div>
-            <Navbar/>
             <main className="container">
                 <p className={Style.titleBag}>My Bag</p>
                 <section className={Style.containerShop}>
@@ -18,7 +21,7 @@ const Bag = () => {
                                 <input className={Style.formCheckInput} type="checkbox" id="checkboxNoLabel" value="" aria-label="..."/>
                                 <p className={Style.selectedItem}>Select all items<span className={Style.selectedTotalItem}> (2 items selected)</span></p>
                             </div>
-                            <button className={Style.selectedDelete}>Delete</button>
+                            <button className={Style.selectedDelete} onClick={handleDelete}>Delete</button>
                         </div>
                         {product.map((item) => 
                             <CartBox name={item.name} img={item.imgUrl} price={item.price} type='mybag'/>

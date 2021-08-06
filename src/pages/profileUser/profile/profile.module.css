@@ -139,6 +139,7 @@
     height: 111px;
     width: 111px;
     border-radius: 50%;
+    object-fit: cover;
 }
 .selectingImage{
     margin-top: 19px;

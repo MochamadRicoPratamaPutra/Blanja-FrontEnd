@@ -1,17 +1,31 @@
 import React from 'react'
-import Navbar from '../../components/navbar'
 import Style from './checkout.module.css'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Gopay from '../../assets/gopay.png'
 import PosIndonesia from '../../assets/pos.png'
 import MasterCard from '../../assets/mastercard.png'
 import CartBox from '../../components/CartBox'
-
+import { orderData, orderItems } from '../../configs/redux/action/cartAction'
 const Checkout = () => {
-    const {product, totalPrice} = useSelector(state => state.cart)
+    const dispatch = useDispatch()
+    const {product, total, quantity} = useSelector(state => state.cart)
+    const {id} = useSelector(state => state.user.profile)
+    const userID = id
+    const dataOrderDetail = {userID, total}
+    console.log(product.id)
+    console.log(dataOrderDetail)
+    const handleSubmit = async() => {
+        dispatch(orderData(dataOrderDetail))
+        product.map((item) => {
+            const user_id = userID
+            const products_id = item.id
+            const dataOrderItem = {user_id, products_id, quantity}
+            console.log(dataOrderItem)
+            dispatch(orderItems(dataOrderItem))
+        })
+    }
     return (
         <div>
-            <Navbar/>
             <main className={Style.content}>
                 <p className={Style.title}>Checkout</p>
                 <p className={Style.subTitle}>Shipping Address</p>
@@ -35,7 +49,7 @@ const Checkout = () => {
                         <p className={Style.titlePaymentBox}>Shopping summary</p>
                         <div className={Style.orderDelivery}>
                             <p className={Style.orderOrDelivery}>Order</p>
-                            <p className={Style.amountOfMoney}>Rp. {totalPrice}</p>
+                            <p className={Style.amountOfMoney}>Rp. {total}</p>
                         </div>
                         <div className={Style.orderDelivery}>
                             <p className={Style.orderOrDelivery}>Delivery</p>
@@ -43,7 +57,7 @@ const Checkout = () => {
                         </div>
                         <div className={Style.summary}>
                             <p className={Style.shoppingSummary}>Shopping summary</p>
-                            <p className={Style.total}>Rp. {totalPrice + 5000}</p>
+                            <p className={Style.total}>Rp. {total + 5000}</p>
                         </div>
                         <button type="button" className={`btn ${Style.btnPayment}`} data-toggle="modal" data-target="#modalPayment">
                             Select payment
@@ -180,7 +194,7 @@ const Checkout = () => {
                                 <p className={Style.paymentTitle}>Shopping summary</p>
                                 <div className={Style.orderDelivery}>
                                     <p className={Style.orderOrDelivery}>Order</p>
-                                    <p className={Style.amountOfMoney}>Rp. {totalPrice}</p>
+                                    <p className={Style.amountOfMoney}>Rp. {total}</p>
                                 </div>
                                 <div className={Style.orderDelivery}>
                                     <p className={Style.orderOrDelivery}>Delivery</p>
@@ -191,9 +205,9 @@ const Checkout = () => {
                         <div className="modal-footer">
                             <div className={`footerSummary mr-auto ml-4`}>
                                 <p className={Style.paymentTitle}>Shopping summary</p>
-                                <p className={Style.total}>Rp. {totalPrice + 5000}</p>
+                                <p className={Style.total}>Rp. {total + 5000}</p>
                             </div>
-                            <button type="button" className={`Style.btn ${Style.btnSaveNewAddress}`} data-dismiss="modal">Buy</button>
+                            <button type="button" className={`Style.btn ${Style.btnSaveNewAddress}`} onClick={handleSubmit} >Buy</button>
                         </div>
                         </div>
                     </div>

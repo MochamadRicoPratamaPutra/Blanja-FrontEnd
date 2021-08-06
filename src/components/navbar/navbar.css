@@ -47,7 +47,7 @@
 .profile-navbar{
     height: 32px;
     width: 32px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 50%;
 }
 .btn-filter{

@@ -17,17 +17,25 @@ const ConfirmationStatus = () => {
             }, 7000)
         })
         .catch((err) => {
-            console.log(err)
+            setTimeout(() => {
+                history.push('/')
+            }, 7000)
         })
     })
     console.log(validate)
     return (
         <div>
-            {validate ? <div className={Style.wrapper}>
+            {validate ? 
+            <div className={Style.wrapper}>
                 <img src={Logo} alt="Logo" />
                 <h1>Thank you for registering</h1>
                 <h2>Enjoy your shopping and selling experience with Blanja!</h2>
-            </div> : <h1>FORBIDDEN, YOU DONT HAVE ACCESS TO THIS PAGE</h1>}
+            </div> : 
+            <div className={Style.wrapper}>
+                <img src={Logo} alt="Logo" />
+                <h1>FORBIDDEN, YOU DONT HAVE ACCESS TO THIS PAGE</h1>
+            </div>
+            }
         </div>
     )
 }

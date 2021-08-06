@@ -57,6 +57,53 @@ export const sendMail = (data) => async (dispatch) => {
         })
     })
 }
+export const renewPass = (data) => async (dispatch) => {
+    return new Promise ((resolve, reject) => {
+        const dataPass = {
+            password: data.password
+        }
+        return axios.put(`${process.env.REACT_APP_API_URL}v1/users/forgot/${data.email}`, dataPass)
+        .then((res) => {
+            dispatch({type: 'RENEW_PASS', payload: {email: data.email, password: data.password}})
+            resolve(res)
+            return res
+        })
+        .catch((err)=>{
+            reject(err.response.data.error.message)
+        })
+    })
+}
+export const editProfile = (data) => (dispatch) => {
+    return new Promise ((resolve, reject)=>{
+        console.log(data)
+        const config = {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        }
+        const formData = new FormData()
+        formData.append('name', data.name)
+        formData.append('email', data.email)
+        formData.append('phoneNumber', data.phoneNumber)
+        formData.append('gender', data.gender)
+        formData.append('profilePicture', data.profilePicture[0], data.profilePicture[0].name)
+        // console.log(formData)
+        return axios.put(`${process.env.REACT_APP_API_URL}v1/users/${data.id}`, formData, config)
+        .then((res) => {
+            const result = res.data.data
+            // console.log(result.role)
+            // console.log(result.status)
+            dispatch({ type: 'UPDATE_USER', payload: result })
+            // localStorage.setItem('token', result.token)
+            resolve(result)
+            return result
+        })
+        .catch((err)=>{
+            console.log(err)
+            reject(err.response)
+        })
+    })
+}
 // const dataResult = result.data
 // console.log(dataResult);
 // dispatch({ type: 'LOGIN_USER', payload: dataResult })

@@ -1,0 +1,65 @@
+.wrapper{
+    position: relative;
+    width: 180px;
+    height: 180px;
+    /* padding: 20px 30px; */
+    /* background-color: blue;
+    border-left:1px solid red;
+    border-right: 1px solid yellow; */
+    /* align-items: center; */
+}
+.contain{
+  margin-bottom: 30px;
+}
+.wrapper img{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding: 30px 30px;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+.textCategory{
+  position: absolute; 
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Metropolis";
+  color: white;
+  font-size: 2rem;
+  /* -webkit-text-stroke: 1px black; */
+}
+.imgItem1{
+  background-color: rgb(255, 71, 71);
+}
+.imgItem2{
+  background-color: rgb(216, 30, 216);
+}
+.imgItem3{
+  background-color: greenyellow;
+}
+.imgItem4{
+  background-color: rgb(47, 179, 255);
+}
+.imgItem5{
+  background-color: rgba(204, 11, 4, 1);
+}
+.imgItem6{
+  background: rgba(204, 11, 4, 1);
+}
+.imgItem7{
+  background-color: rgba(28, 51, 145, 1);
+}
+.imgItem8{
+  background-color: rgba(227, 31, 81, 1);
+}
+.imgItem9{
+  background-color:  rgba(87, 205, 158, 1);
+}
+.imgItem10{
+  background: rgba(181, 216, 80, 1);
+
+}

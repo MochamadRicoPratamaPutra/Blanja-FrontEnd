@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Style from './button.module.css'
 import Logo from '../../assets/Group 1158.svg'
 import Lock from '../../assets/lock.svg'
 import {useDispatch} from 'react-redux'
 import { useHistory } from 'react-router'
-import {login, signup, sendMail} from '../../configs/redux/action/userAction'
+import {login, signup, sendMail, renewPass} from '../../configs/redux/action/userAction'
 const ButtonPrimary = ({destination, modalCheck, role, type, data}) => {
     const dispatch = useDispatch()
     const history = useHistory()
@@ -23,14 +22,27 @@ const ButtonPrimary = ({destination, modalCheck, role, type, data}) => {
         console.log(data)
         dispatch(signup(data))
         .then((res) => {
-            history.push('/login')
+            history.push(`${destination}`)
         })
         .catch((err) => {
             alert(err)
         })
     }
-    const handleResetPass = async() =>{
+    const handleSendMail = async() => {
         dispatch(sendMail(data))
+    }
+    const handleChangePass = async() => {
+        if (data.password !== data.confirm) {
+            alert("Password didn't match")
+        } else {
+            dispatch(renewPass(data))
+            .then((res) => {
+                history.push(`/${destination}`)
+            })
+            .catch((err) => {
+                alert(err)
+            })
+        }
     }
     if (modalCheck === 'true' ) {
         return (
@@ -44,7 +56,7 @@ const ButtonPrimary = ({destination, modalCheck, role, type, data}) => {
                                 <img src={Lock} alt=""/>
                                 <p class={Style.modalTextSubtitle}>The following is the button for you to reset
                                     the password.</p>
-                                <button class={Style.changePass} onClick={handleResetPass}>Change password</button>
+                                <button class={Style.changePass} onClick={handleSendMail}>Change password</button>
                             </div>
                         </div>
                     </div>
@@ -62,6 +74,12 @@ const ButtonPrimary = ({destination, modalCheck, role, type, data}) => {
         return (
             <div>
                 <button className={Style.button1} onClick={handleRegister}>Primary</button>
+            </div>
+        )
+    } else if (type === 'resetPass') {
+        return (
+            <div>
+                <button className={Style.button1} onClick={handleChangePass}>Primary</button>
             </div>
         )
     }

@@ -22,18 +22,27 @@ import ProfileSeller from '../../pages/profileSeller/profile'
 import ProfileSellerMyOrder from '../../pages/profileSeller/profileMyOrder'
 import PublicRoute from './module/publicRoute'
 import PrivateRoute from './module/privateRoute'
+import CommonRoute from './module/commonRoute'
+import CustomerRoute from './module/customerRoute'
+import SellerRoute from './module/sellerRoute'
 import ConfirmationStatus from '../../pages/ConfirmationStatus'
+import ForbiddenPages from '../../pages/ForbiddenPages'
+import Category from '../../pages/Category'
+import New from '../../pages/New'
 const Router = () => {
     return (
         <BrowserRouter>
             <Switch>
-            <Route exact path="/" component={Home} />
-                <Route exact path="/home" component={Home} />
-                <Route exact path="/profile-seller-new-product" component={SellingProduct}/>
-                <Route exact path="/profile-seller-my-product" component={ProfileMyProduct} />
-                <Route exact path="/profile-seller-update-product/:id" component={ProfileUpdateProduct} />
-                <Route exact path="/profile-seller-order" component={ProfileSellerMyOrder} />
-                <Route exact path="/products/:id" component={Product} />
+                <CommonRoute exact path="/" component={Home} />
+                <CommonRoute exact path="/home" component={Home} />
+                <CommonRoute exact path="/category/:id" component={Category} />
+                <CommonRoute exact path="/new" component={New} />
+                <SellerRoute exact path="/profile-seller/:id" component={ProfileSeller} />
+                <SellerRoute exact path="/profile-seller-new-product/:id" component={SellingProduct}/>
+                <SellerRoute exact path="/profile-seller-my-product/:id" component={ProfileMyProduct} />
+                <SellerRoute exact path="/profile-seller-update-product/:id" component={ProfileUpdateProduct} />
+                <SellerRoute exact path="/profile-seller-order/:id" component={ProfileSellerMyOrder} />
+                <CommonRoute exact path="/products/:id" component={Product} />
                 <PublicRoute exact path="/login" component={LoginCustomer} />
                 <PublicRoute exact path="/login-seller" component={LoginSeller} />
                 <PublicRoute exact path="/signup" component={SignUpUser} />
@@ -43,12 +52,12 @@ const Router = () => {
                 <PublicRoute exact path="/confirm-login" component={ConfirmLogin} />
                 <PrivateRoute exact path="/my-bag" component={MyBag} />
                 <PrivateRoute exact path="/checkout" component={Checkout} />
-                <Route exact path="/search" component={Search} />
-                <Route exact path="/profile" component={ProfileCustomer} />
-                <Route exact path="/profile-address" component={ProfileAddress} />
-                <Route exact path="/profile-order" component={ProfileOrder} />
-                <Route exact path="/profile-seller" component={ProfileSeller} />
+                <CommonRoute exact path="/search" component={Search} />
+                <CustomerRoute exact path="/profile/:id" component={ProfileCustomer} />
+                <CustomerRoute exact path="/profile-address/:id" component={ProfileAddress} />
+                <CustomerRoute exact path="/profile-order/:id" component={ProfileOrder} />
                 <Route exact path="/verification/:id" component={ConfirmationStatus} />
+                <Route exact path="/forbidden" component={ForbiddenPages} />
             </Switch>
         </BrowserRouter>
     )

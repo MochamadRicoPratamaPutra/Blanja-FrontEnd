@@ -4,9 +4,12 @@ import ReactTable from "react-table";
 import 'react-table/react-table.css'
 import { useHistory } from 'react-router'
 import Style from './table.module.css'
+import { deleteProduct, productId } from '../../configs/redux/action/productAction';
+import { useDispatch } from 'react-redux';
 const Table = (props) => {
     const [products, setProduct] = useState([])
     const history = useHistory()
+    const dispatch = useDispatch()
     useEffect(()=>{
         console.log('useEffect dijlaan kan');
         axios.get(`${process.env.REACT_APP_API_URL}v1/products`)
@@ -18,14 +21,17 @@ const Table = (props) => {
     }, [])
     const handleDelete = (item) =>{
         const name = item.name
-        axios.delete(`http://localhost:4000/products/${item.id}`)
-        .then((res)=>{
-            alert(`Success deleting data with name ${name}`)
-            history.go(0)
-        })
+        const id = item.id
+        const data = {name, id}
+        console.log(data)
+        dispatch(deleteProduct(data))
     }
     const handleEdit = (item) =>{
-        history.push(`/profile-seller-update-product/${item.id}`)
+        const id = item.id
+        dispatch(productId(id))
+        .then(() => {
+            history.push(`/profile-seller-update-product/${id}`)
+        })
     }
     console.log(products)
     const columns = [{  

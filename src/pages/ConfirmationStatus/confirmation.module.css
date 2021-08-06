@@ -8,3 +8,7 @@
 .wrapper h2{
     text-align: center;
 }
+.wrapper h1{
+    text-align: center;
+    margin-top: 40px;
+}

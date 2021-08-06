@@ -1,0 +1,44 @@
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 180px;
+    /* padding: 20px 30px; */
+    /* background-color: blue;
+    border-left:1px solid red;
+    border-right: 1px solid yellow; */
+    /* align-items: center; */
+}
+.contain{
+  margin-bottom: 60px;
+}
+.wrapper img{
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  position: relative;
+}
+.textCategory{
+  position: absolute; 
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Metropolis";
+  color: white;
+  font-size: 2rem;
+  /* -webkit-text-stroke: 1px black; */
+}
+/* .slick-prev:before{
+  background-color: blue !important;
+  width: 52px;
+  height: 52px;
+  content: '' !important;
+  position: absolute;
+  top: -11px;
+  left: -31px;
+  background-image: url('../../assets/PrevArrow.svg');
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  background-size: 52px;
+  opacity: 1 !important;
+} */

@@ -45,7 +45,7 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </nav>
-            <div className="modal fade" id="modal-filter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div className="modal fade" id="modal-filter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -65,19 +65,19 @@ const Navbar = (props) => {
                             </div>
                             <h3 className="title-section">Sizes</h3>
                             <div className="size-choice">
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-1'/><label className='string-check-box size-check-box-1' for="size-check-1">XS</label>
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-2'/><label className='string-check-box size-check-box-2' for="size-check-2">S</label>
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-3'/><label className='string-check-box size-check-box-3' for="size-check-3">M</label>
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-4'/><label className='string-check-box size-check-box-4' for="size-check-4">L</label>
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-5'/><label className='string-check-box size-check-box-5' for="size-check-5">XL</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-1'/><label className='string-check-box size-check-box-1' htmlFor="size-check-1">XS</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-2'/><label className='string-check-box size-check-box-2' htmlFor="size-check-2">S</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-3'/><label className='string-check-box size-check-box-3' htmlFor="size-check-3">M</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-4'/><label className='string-check-box size-check-box-4' htmlFor="size-check-4">L</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='size-check-5'/><label className='string-check-box size-check-box-5' htmlFor="size-check-5">XL</label>
                             </div>
                             <h3 className="title-section">Category</h3>
                             <div className="category-modal">
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-1'/><label className='string-check-box category-check-box-1' for="category-check-1">All</label>
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-2'/><label className='string-check-box category-check-box-2' for="category-check-2">Women</label>
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-3'/><label className='string-check-box category-check-box-3' for="category-check-3">Men</label>
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-4'/><label className='string-check-box category-check-box-4' for="category-check-4">Girl</label>
-                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-5'/><label className='string-check-box category-check-box-5' for="category-check-5">Boy</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-1'/><label className='string-check-box category-check-box-1' htmlFor="category-check-1">All</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-2'/><label className='string-check-box category-check-box-2' htmlFor="category-check-2">Women</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-3'/><label className='string-check-box category-check-box-3' htmlFor="category-check-3">Men</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-4'/><label className='string-check-box category-check-box-4' htmlFor="category-check-4">Girl</label>
+                                <input type="checkbox" className="checkmark-size visually-hidden" id='category-check-5'/><label className='string-check-box category-check-box-5' htmlFor="category-check-5">Boy</label>
                             </div>
                             <div className="brand-modal">
                                 <div className="brand-header-text">
@@ -90,11 +90,11 @@ const Navbar = (props) => {
                             </div>
                             <div className="collapse" id="collapseExample">
                                 <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-                                <label for="vehicle1"> Adidas Originals</label><br/>
+                                <label htmlFor="vehicle1"> Adidas Originals</label><br/>
                                 <input type="checkbox" id="vehicle2" name="vehicle2" value="Car"/>
-                                <label for="vehicle2"> Jack & Jones</label><br/>
+                                <label htmlFor="vehicle2"> Jack & Jones</label><br/>
                                 <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                                <label for="vehicle3"> s.Oliver</label><br/>
+                                <label htmlFor="vehicle3"> s.Oliver</label><br/>
                             </div>
                         </div>
                         <div className="modal-footer modal-confirm">

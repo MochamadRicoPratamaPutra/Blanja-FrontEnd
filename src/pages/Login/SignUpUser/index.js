@@ -11,7 +11,7 @@ export class Login extends Component {
             name: '',
             email: '',
             password: '',
-            phoneNumber: 0,
+            phoneNumber: '',
             gender: 0,
             role: 'customer',
             storeName: '',

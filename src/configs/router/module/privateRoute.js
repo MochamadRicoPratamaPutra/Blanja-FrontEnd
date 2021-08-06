@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Redirect} from 'react-router-dom'
-// import Navbar from '../../../components/module/Navbar'
+import NavbarUser from '../../../components/navbarUser'
 const PrivateRoute = ({ component: Component, ...rest}) => {
     const isAuth = localStorage.getItem('token')
     return (
@@ -8,6 +8,7 @@ const PrivateRoute = ({ component: Component, ...rest}) => {
         return(
             isAuth ? (
             <>
+                <NavbarUser />
                 <Component {...props}/> 
             </>
             ): <Redirect to="/login" />

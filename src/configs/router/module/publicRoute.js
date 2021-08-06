@@ -5,7 +5,10 @@ const PublicRoute = ({ component: Component, ...rest }) => {
     return (
         <Route {...rest} render={(props) => {
             return (
-                isAuth ? <Redirect to="/" />:<Component {...props} />
+                isAuth ? <Redirect to="/" />:
+                <>
+                    <Component {...props}/> 
+                </>
             )
             }} />
     )

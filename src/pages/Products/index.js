@@ -3,11 +3,10 @@ import Style from './product.module.css'
 import Star from '../../assets/Star.svg'
 import { Link, useHistory, useParams } from 'react-router-dom'
 import axios from 'axios'
-import Navbar from '../../components/navbar'
 import Card from '../../components/card'
 import PlusMinus from '../../components/PlusMinus'
-import { useDispatch, useSelector } from 'react-redux'
-import { cartBag, checkout } from '../../configs/redux/action/cartAction'
+import { useDispatch } from 'react-redux'
+import { cartBag } from '../../configs/redux/action/cartAction'
 
 const Product = () => {
     const {id} = useParams()
@@ -34,17 +33,28 @@ const Product = () => {
         })
     }, [])
     const handleMyBag = (product) => {
-        dispatch(cartBag(product))
-        history.push('/my-bag')
+        const isAuth = localStorage.getItem('token')
+        console.log(isAuth)
+        if (isAuth) {
+            dispatch(cartBag(product))
+            history.push('/my-bag')
+        } else {
+            history.push('/login')
+        }
     }
     const handleCheckout = (product) =>{
-        dispatch(cartBag(product))
-        history.push('/checkout')
+        const isAuth = localStorage.getItem('token')
+        console.log(isAuth)
+        if (isAuth) {
+            dispatch(cartBag(product))
+            history.push('/checkout')
+        } else {
+            history.push('/login')
+        }
     }
     console.log(product);
     return (
         <div>
-            <Navbar/>
             {product.map((item)=>
                 <main className={Style.container}>
                     <p className={Style.directory}><span><Link to="/" className={Style.directory}>Home</Link></span> > <span><Link to={`category/${item.categoryID}`} className={Style.directory}>Category</Link></span> > {item.categoryID}</p>
