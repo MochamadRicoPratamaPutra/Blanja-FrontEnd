@@ -44,13 +44,17 @@ export const updateProduct = (data) => async(dispatch) => {
         formData.append('price', data.price)
         formData.append('stock', data.stock)
         formData.append('description', data.description)
-        formData.append('imgUrl', data.imgUrl[0], data.imgUrl[0].name)
+        try{
+            formData.append('imgUrl', data.imgUrl[0], data.imgUrl[0].name)
+        }
+        catch{
+            formData.append('imgUrl', )
+        }
         formData.append('categoryID', data.categoryID)
         return axios.put(`${process.env.REACT_APP_API_URL}v1/products/${data.id}`, formData, config)
         .then((res) => {
             const result = res.data.data
             dispatch({type:'UPDATE_DATA', payload: result})
-            alert('DATA SUCCESFULLY UPDATED')
             resolve(res)
         })
         .catch((err)=>{
