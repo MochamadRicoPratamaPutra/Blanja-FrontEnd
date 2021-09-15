@@ -16,12 +16,12 @@ As a seller, you can sell any item that you want to sell, and as a customer you 
 
 ## Screenshot
 <div>
-  <img src='https://i.imgur.com/tKdWNx1.png' style='width=200px'/>
-  <img src='https://i.imgur.com/YBamUvF.png' style='width=200px'/>
-  <img src='https://i.imgur.com/AXv2Oyh.png' style='width=200px'/>
-  <img src='https://i.imgur.com/WZKni8k.png' style='width=200px'/>
-  <img src='https://i.imgur.com/2uyeed4.png' style='width=200px'/>
-  <img src='hhttps://i.imgur.com/eol7Wzu.png' style='width=200px'/>
+  <image src='https://i.imgur.com/tKdWNx1.png' width=200px/>
+  <image src='https://i.imgur.com/YBamUvF.png' width=200px/>
+  <image src='https://i.imgur.com/AXv2Oyh.png' width=200px/>
+  <image src='https://i.imgur.com/WZKni8k.png' width=200px/>
+  <image src='https://i.imgur.com/2uyeed4.png' width=200px/>
+  <image src='hhttps://i.imgur.com/eol7Wzu.png' width=200px/>
 </div>
 
 ## Built With
