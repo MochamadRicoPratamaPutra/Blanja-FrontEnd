@@ -10,25 +10,40 @@
     <a href="https://github.com/19damah23/coffee-shop/pulls">Request Feature</a>
   </p>
 
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Screenshot](#screenshots)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+* [Related Project](#related-project-backend)
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact)
+
+<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 Blanja is a e-commerce site connecting seller and customer.
 As a seller, you can sell any item that you want to sell, and as a customer you can buy anything you want!
 
-## Screenshot
-<div>
+## Screenshots
+<p align="center">
   <image src='https://i.imgur.com/tKdWNx1.png' width=400px/>
-  <image src='https://i.imgur.com/YBamUvF.png' width=400px/>
   <image src='https://i.imgur.com/AXv2Oyh.png' width=400px/>
-  <image src='https://i.imgur.com/WZKni8k.png' width=400px/>
   <image src='https://i.imgur.com/2uyeed4.png' width=400px/>
+  <image src='https://i.imgur.com/g4HAyjz.png' width=400px/>
   <image src='hhttps://i.imgur.com/eol7Wzu.png' width=400px/>
-</div>
+  <image src='https://i.imgur.com/YBamUvF.png' width=400px/>
+  <image src='https://i.imgur.com/WZKni8k.png' width=400px/>
+</p>
 
 ## Built With
 
 [![React](https://img.shields.io/badge/React-11.1.2-blue)](https://reactjs.org/)
 
+<!-- GETTING STARTED -->
 
 ## Getting Started
 
@@ -43,11 +58,20 @@ REACT_APP_API_URL = "Your Backend URL"
 
 5. Type `npm run dev`
 
+<!-- RELATED PROJECT -->
+
 ## Related Project
 
+- [Frontend](https://github.com/MochamadRicoPratamaPutra/Blanja-FrontEnd)
 - [Backend](https://github.com/MochamadRicoPratamaPutra/Backend-Blanja)
 
+<!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
 - [Axios](https://www.npmjs.com/package/axios)
 - [React](https://reactjs.org/)
+
+<!-- CONTACT -->
+## Contact
+
+My Email : mricopratamaputra@gmail.com
