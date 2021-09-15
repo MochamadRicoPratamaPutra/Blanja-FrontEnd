@@ -15,13 +15,17 @@ const Checkout = () => {
     console.log(product.id)
     console.log(dataOrderDetail)
     const handleSubmit = async() => {
+        console.log('order detail')
         dispatch(orderData(dataOrderDetail))
-        product.map((item) => {
-            const user_id = userID
-            const products_id = item.id
-            const dataOrderItem = {user_id, products_id, quantity}
-            console.log(dataOrderItem)
-            dispatch(orderItems(dataOrderItem))
+        .then((result) => {
+            product.forEach((item) => {
+                console.log('order ', item)
+                const productsID = item.id
+                const orderID = result.id
+                const dataOrderItem = {userID, productsID, quantity, orderID}
+                console.log(dataOrderItem)
+                dispatch(orderItems(dataOrderItem))
+            })
         })
     }
     return (

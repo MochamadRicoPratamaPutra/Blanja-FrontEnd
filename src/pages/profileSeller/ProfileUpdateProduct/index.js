@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Style from './profile.module.css'
 import Edit from '../../../assets/pen-profile.png'
@@ -7,7 +7,6 @@ import Home from '../../../assets/home.svg'
 import Product from '../../../assets/product.svg'
 import Cart from '../../../assets/shopping-cart-seller.svg'
 import Box1 from '../../../assets/box-big.svg'
-import Box2 from '../../../assets/box-small.svg'
 // import axios from 'axios'
 import { updateProduct } from '../../../configs/redux/action/productAction'
 import { useSelector, useDispatch } from 'react-redux'
@@ -28,11 +27,14 @@ const SellingProduct = () => {
     //     imgUrl: '',
     //     description: ''
     // })
+    const [image, setImage] = useState(null)
     const handleChange = (e)=>{
         dispatch({type: "CHANGE_VALUE_PRODUCT", payload: {[e.target.name]: e.target.value}})
     }
     const handleInputFile = (e) => {
         console.log(e.target.files[0])
+        setImage(URL.createObjectURL(e.target.files[0]))
+        console.log(image)
         dispatch({type: "CHANGE_VALUE_PRODUCT", payload: {[e.target.name]: e.target.files}})
     }
     // const {id} = useParams()
@@ -177,17 +179,14 @@ const SellingProduct = () => {
                         <div className={Style.itemPhoto}>
                             <div className={Style.photoBox}>
                                 <div className={Style.mainPhotoBox}>
-                                    <Link to="#"><img src={Box1} alt="" className={Style.mainItemPhoto}/></Link>
+                                    <img src={image ? image : product.imgUrl ? product.imgUrl : Box1} alt="foto" className={Style.mainItemPhoto}/>
                                     <p className={Style.mainProfileSubTitle}>Foto utama</p>
                                 </div>
-                                <Link to="#"><img src={Box2} alt="" className={Style.subItemPhoto}/></Link>
-                                <Link to="#"><img src={Box2} alt="" className={Style.subItemPhoto}/></Link>
-                                <Link to="#"><img src={Box2} alt="" className={Style.subItemPhoto}/></Link>
-                                <Link to="#"><img src={Box2} alt="" className={Style.subItemPhoto}/></Link>
                             </div>
                             <hr className={Style.hrMargin}/>
                             {/* <input type="text" name='imgUrl' id='imgUrl' className='form-control' placeHolder={item.imgUrl} onChange={handleChange} /> */}
-                            <button type="button" class={`${Style.mainProfileSubTitle} ${Style.selectingImage}`}><input type='file' name='imgUrl' onChange={handleInputFile}/>Select image</button>
+                            <input type='file' name='imgUrl' id='imgUrl' onChange={handleInputFile} className={Style.hide}/>
+                            <label htmlFor="imgUrl" className={`${Style.mainProfileSubTitle} ${Style.selectingImage}`}>Select Image</label>
                         </div>
                     </div>
                     <div className={Style.mainPhoto}>

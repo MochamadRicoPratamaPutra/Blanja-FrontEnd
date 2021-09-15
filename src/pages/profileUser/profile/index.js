@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Style from './profile.module.css'
 import Pen from '../../../assets/pen-profile.png'
@@ -14,15 +14,13 @@ const Profile = () => {
     const user = useSelector(state => state.user.profile)
     const history = useHistory()
     const dispatch = useDispatch()
-    // const [imagePreview, setimagePreview] = useState('')
-    let img = false
+    const [imagePreview, setimagePreview] = useState('')
     const handleChange = (e)=>{
         dispatch({type: "CHANGE_VALUE", payload: {[e.target.name]: e.target.value}})
     }
     const handleInputFile = (e) => {
         console.log(e.target.file)
-        img = URL.createObjectURL(e.target.files[0])
-        console.log(img)
+        setimagePreview(URL.createObjectURL(e.target.files[0]))
         dispatch({type: "CHANGE_VALUE", payload: {[e.target.name]: e.target.files}})
     }
     const handleLogout = () => {
@@ -39,7 +37,7 @@ const Profile = () => {
                     <ul class={`nav flex-column ml-3 mb-5`}>
                         <li class={Style.navItem}>
                             <div class={`nav-link mb-5 ${Style.profileNav}`} aria-current="page">
-                                <img class={Style.profileImage} src={img ? img : user.profilePicture} alt=""/>
+                                <img class={Style.profileImage} src={imagePreview ? imagePreview : user.profilePicture} alt=""/>
                                 <div class={Style.profileName}>
                                     <Link class={`${Style.navVerticalTitle} ${Style.activePage}`} to={`/profile/${user.id}`}>{user.name.slice(0, 13)}</Link>
                                     <div class={Style.editingProfile}>
@@ -188,8 +186,9 @@ const Profile = () => {
                                 <button type="button" class={`${Style.saveProfile} mr-auto ml-auto mt-5`} onClick={handleSubmit}>Save</button>
                             </section>
                             <section class={Style.photoProfile}>
-                                <img src={user.profilePicture} alt=""/>
-                                <button type="button" class={`${Style.mainProfileSubTitle} ${Style.selectingImage}`}><input type='file' name='profilePicture' onChange={handleInputFile}/>Select image</button>
+                                <img src={imagePreview ? imagePreview : user.profilePicture} alt=""/>
+                                <input type='file' name='profilePicture' id='profilePicture' onChange={handleInputFile} className={Style.hide}/>
+                                <label htmlFor="profilePicture" className={`${Style.mainProfileSubTitle} ${Style.selectingImage}`}>Select image</label>
                             </section>
                         </section>
                     </main>

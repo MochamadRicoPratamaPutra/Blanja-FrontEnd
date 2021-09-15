@@ -61,6 +61,7 @@ export const orderItems = (data) => async(dispatch) => {
         .catch((err)=>{
             console.log(err.response)
             reject(err)
+            alert (err)
         })
     })
 }
