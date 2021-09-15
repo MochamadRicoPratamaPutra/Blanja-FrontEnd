@@ -41,7 +41,7 @@ As a seller, you can sell any item that you want to sell, and as a customer you 
 
 ## Built With
 
-[![React](https://img.shields.io/badge/React-11.1.2-blue)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-17.0.2-blue)](https://reactjs.org/)
 
 <!-- GETTING STARTED -->
 
