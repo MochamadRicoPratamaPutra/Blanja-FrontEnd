@@ -56,7 +56,7 @@ As a seller, you can sell any item that you want to sell, and as a customer you 
 REACT_APP_API_URL = "Your Backend URL"
 ```
 
-5. Type `npm run dev`
+5. Type `npm start`
 
 <!-- RELATED PROJECT -->
 
