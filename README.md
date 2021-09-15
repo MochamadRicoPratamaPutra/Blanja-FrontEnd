@@ -1,5 +1,7 @@
 <h1 align='center'>Blanja</h1>
-<image align="center" width="200" src='./src/assets/Group 1158.svg' />
+<p align="center">
+  <image align="center" width="200" src='./src/assets/Group 1158.svg' />
+  </p>
   <p align="center">
     <a href="https://blanja-rico.herokuapp.com/">View Demo</a>
     ·
