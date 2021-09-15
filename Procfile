@@ -1,1 +1,1 @@
-web: node src/pages/Home/index.js
+web: node src/index.js
