@@ -25,6 +25,7 @@ const Profile = () => {
     }
     const handleLogout = () => {
         localStorage.removeItem('token')
+        dispatch({type: "LOGOUT"})
         history.push('/login')
     }
     const handleSubmit = () => {

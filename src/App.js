@@ -1,27 +1,30 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 import Router from './configs/router';
-class App extends Component{
-  constructor(props){
-    super(props)
+import ReactNotification from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
+class App extends Component {
+  constructor(props) {
+    super(props);
     console.log('ini method costructor');
-    this.state={
-    }
+    this.state = {};
   }
-  componentDidMount(){
+  componentDidMount() {
     console.log('ini method compoenntDIdMount');
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     console.log('ini method componentDidUpdate');
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     console.log('ini method componentWillUnmount');
   }
-  render(){
+  render() {
     console.log('ini method render');
-    return(
-      <Router />
-    )
+    return (
+      <>
+        <ReactNotification />
+        <Router />
+      </>
+    );
   }
-
 }
-export default App 
+export default App;

@@ -1,5 +1,5 @@
 import axios from "axios"
-
+import { store } from 'react-notifications-component'
 export const login = (data, role) => async(dispatch) => {
     return new Promise ((resolve, reject)=>{
         const dataBody = { email: data.email, password: data.password }
@@ -93,8 +93,21 @@ export const editProfile = (data) => (dispatch) => {
             const result = res.data.data
             // console.log(result.role)
             // console.log(result.status)
-            dispatch({ type: 'UPDATE_USER', payload: result })
+            // dispatch({ type: 'UPDATE_USER', payload: result })
             // localStorage.setItem('token', result.token)
+            store.addNotification({
+                title: `Successfuly editing your account`,
+                message: `Profile edited for ${result.name}`,
+                type: 'success',
+                insert: 'top',
+                container: 'top-right',
+                animationIn: ['animate__animated', 'animate__fadeIn'],
+                animationOut: ['animate__animated', 'animate__fadeOut'],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true,
+                },
+            });
             resolve(result)
             return result
         })

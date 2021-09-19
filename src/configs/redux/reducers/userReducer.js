@@ -44,6 +44,11 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 profile: action.payload
             }
+        case 'LOGOUT':
+            return {
+                profile: {},
+                error: null
+            }
         default:
             return state
     }

@@ -6,10 +6,13 @@ import PosIndonesia from '../../assets/pos.png'
 import MasterCard from '../../assets/mastercard.png'
 import CartBox from '../../components/CartBox'
 import { orderData, orderItems } from '../../configs/redux/action/cartAction'
+import { store } from "react-notifications-component"
+import { useHistory } from 'react-router'
 const Checkout = () => {
     const dispatch = useDispatch()
     const {product, total, quantity} = useSelector(state => state.cart)
     const {id} = useSelector(state => state.user.profile)
+    const history = useHistory()
     const userID = id
     const dataOrderDetail = {userID, total}
     console.log(product.id)
@@ -18,6 +21,19 @@ const Checkout = () => {
         console.log('order detail')
         dispatch(orderData(dataOrderDetail))
         .then((result) => {
+            store.addNotification({
+                title: `Successfuly making a order.`,
+                message: `order id: ${result.id}`,
+                type: 'success',
+                insert: 'top',
+                container: 'top-right',
+                animationIn: ['animate__animated', 'animate__fadeIn'],
+                animationOut: ['animate__animated', 'animate__fadeOut'],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true,
+                },
+            });
             product.forEach((item) => {
                 console.log('order ', item)
                 const productsID = item.id
@@ -25,8 +41,24 @@ const Checkout = () => {
                 const dataOrderItem = {userID, productsID, quantity, orderID}
                 console.log(dataOrderItem)
                 dispatch(orderItems(dataOrderItem))
+                .then(() => {
+                    store.addNotification({
+                        title: `Successfuly adding a product to ${result.id}`,
+                        message: `product: ${item.name}`,
+                        type: 'success',
+                        insert: 'top',
+                        container: 'top-right',
+                        animationIn: ['animate__animated', 'animate__fadeIn'],
+                        animationOut: ['animate__animated', 'animate__fadeOut'],
+                        dismiss: {
+                            duration: 5000,
+                            onScreen: true,
+                        },
+                    });
+                })
             })
         })
+        history.push('/home')
     }
     return (
         <div>
@@ -211,7 +243,7 @@ const Checkout = () => {
                                 <p className={Style.paymentTitle}>Shopping summary</p>
                                 <p className={Style.total}>Rp. {total + 5000}</p>
                             </div>
-                            <button type="button" className={`Style.btn ${Style.btnSaveNewAddress}`} onClick={handleSubmit} >Buy</button>
+                            <button type="button" className={`Style.btn ${Style.btnSaveNewAddress}`} onClick={handleSubmit} data-dismiss="modal">Buy</button>
                         </div>
                         </div>
                     </div>

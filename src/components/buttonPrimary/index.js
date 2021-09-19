@@ -5,6 +5,7 @@ import Lock from '../../assets/lock.svg'
 import {useDispatch} from 'react-redux'
 import { useHistory } from 'react-router'
 import {login, signup, sendMail, renewPass} from '../../configs/redux/action/userAction'
+import { store } from "react-notifications-component"
 const ButtonPrimary = ({destination, modalCheck, role, type, data}) => {
     const dispatch = useDispatch()
     const history = useHistory()
@@ -12,21 +13,136 @@ const ButtonPrimary = ({destination, modalCheck, role, type, data}) => {
         console.log(data)
         dispatch(login(data, role))
         .then((res) => {
+            store.addNotification({
+                title: `Successfuly login`,
+                message: `welcome ${res.name}`,
+                type: 'success',
+                insert: 'top',
+                container: 'top-right',
+                animationIn: ['animate__animated', 'animate__fadeIn'],
+                animationOut: ['animate__animated', 'animate__fadeOut'],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true,
+                },
+            });
             history.push(`/${destination}`)
         })
         .catch((err) => {
-            alert(err)
+            store.addNotification({
+                title: `Error`,
+                message: `${err}`,
+                type: 'danger',
+                insert: 'top',
+                container: 'top-right',
+                animationIn: ['animate__animated', 'animate__fadeIn'],
+                animationOut: ['animate__animated', 'animate__fadeOut'],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true,
+                },
+            });
         })
     }
     const handleRegister = async() => {
         console.log(data)
-        dispatch(signup(data))
-        .then((res) => {
-            history.push(`${destination}`)
-        })
-        .catch((err) => {
-            alert(err)
-        })
+        if (data.email === '' || data.name === '' || data.password === '') {
+            store.addNotification({
+                title: `Error`,
+                message: `Please fill out all the forms above`,
+                type: 'danger',
+                insert: 'top',
+                container: 'top-right',
+                animationIn: ['animate__animated', 'animate__fadeIn'],
+                animationOut: ['animate__animated', 'animate__fadeOut'],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true,
+                },
+            });
+        } else if (data.role === 'seller') {
+            if (data.phoneNumber === '' || data.storeName === '') {
+                store.addNotification({
+                    title: `Error`,
+                    message: `Please fill out all the forms above`,
+                    type: 'danger',
+                    insert: 'top',
+                    container: 'top-right',
+                    animationIn: ['animate__animated', 'animate__fadeIn'],
+                    animationOut: ['animate__animated', 'animate__fadeOut'],
+                    dismiss: {
+                        duration: 5000,
+                        onScreen: true,
+                    },
+                });
+            } else {
+                dispatch(signup(data))
+                .then((res) => {
+                    store.addNotification({
+                        title: `Successfuly registering your account`,
+                        message: `Please check your email for verification`,
+                        type: 'success',
+                        insert: 'top',
+                        container: 'top-right',
+                        animationIn: ['animate__animated', 'animate__fadeIn'],
+                        animationOut: ['animate__animated', 'animate__fadeOut'],
+                        dismiss: {
+                            duration: 5000,
+                            onScreen: true,
+                        },
+                    });
+                    history.push(`${destination}`)
+                })
+                .catch((err) => {
+                    store.addNotification({
+                        title: `Error`,
+                        message: `${err}`,
+                        type: 'danger',
+                        insert: 'top',
+                        container: 'top-right',
+                        animationIn: ['animate__animated', 'animate__fadeIn'],
+                        animationOut: ['animate__animated', 'animate__fadeOut'],
+                        dismiss: {
+                            duration: 5000,
+                            onScreen: true,
+                        },
+                    });
+                })
+            }
+        } else {
+            dispatch(signup(data))
+            .then((res) => {
+                store.addNotification({
+                    title: `Successfuly registering your account`,
+                    message: `Please check your email for verification`,
+                    type: 'success',
+                    insert: 'top',
+                    container: 'top-right',
+                    animationIn: ['animate__animated', 'animate__fadeIn'],
+                    animationOut: ['animate__animated', 'animate__fadeOut'],
+                    dismiss: {
+                        duration: 5000,
+                        onScreen: true,
+                    },
+                });
+                history.push(`${destination}`)
+            })
+            .catch((err) => {
+                store.addNotification({
+                    title: `Error`,
+                    message: `${err}`,
+                    type: 'danger',
+                    insert: 'top',
+                    container: 'top-right',
+                    animationIn: ['animate__animated', 'animate__fadeIn'],
+                    animationOut: ['animate__animated', 'animate__fadeOut'],
+                    dismiss: {
+                        duration: 5000,
+                        onScreen: true,
+                    },
+                });
+            })
+        }
     }
     const handleSendMail = async() => {
         dispatch(sendMail(data))
