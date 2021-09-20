@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import Style from './profile.module.css'
 import Pen from '../../../assets/pen-profile.png'
@@ -6,14 +6,28 @@ import Collapse from '../../../assets/colapseLogo.svg'
 import Home from '../../../assets/home.svg'
 import Product from '../../../assets/product.svg'
 import Cart from '../../../assets/shopping-cart-seller.svg'
-import Tabs from '../../../components/tabOrder'
 import { useSelector } from 'react-redux'
-const OrderSeller = () => {
+import CartBox from '../../../components/CartBox'
+import axios from 'axios'
+import { useParams } from 'react-router'
+const ProfileOrderItemSeller = () => {
     const user = useSelector(state => state.user.profile)
+    const {id} = useParams()
+    const [product, setProduct] = useState([])
+    useEffect(()=>{
+      axios.get(`${process.env.REACT_APP_API_URL}v1/order-items/${id}`, {headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      }})
+      .then((res) => {
+          setProduct(res.data.data)
+      })
+      .catch((err) => {
+      })
+  }, [id])
     return (
         <div>
-            <div class="row no-gutter mt-0 nav-vertical">
-                <div className={`col-md-3 ${Style.backgroundNavVer} mt-2 pr-3 pt-4`}>
+            <div class="row no-gutter mt-0 nav-vertical ml-0 mr-0">
+            <div className={`col-md-3 ${Style.backgroundNavVer} mt-2 pr-3 pt-4`}>
                     <ul className="nav flex-column ml-3 mb-5">
                         <li className={Style.navItem}>
                             <div className={`nav-link mb-5 ${Style.profileNav}`} aria-current="page">
@@ -76,13 +90,18 @@ const OrderSeller = () => {
                     </ul>
                 </div>
                 <div class={`col-md-9 ${Style.mainPage}`}>
-                    <main class={Style.mainProfile}>
-                        <Tabs userID = {user.id} role = {user.role}/>
-                    </main>
+                    <div class={Style.mainProfile}>
+                      {product.map((item)=>
+                      <div className={Style.itemContainer}>
+                        <CartBox name={item.name} img={item.imgUrl} price={item.price} type='checkout'/>
+                        <h1>x{item.quantity}</h1>
+                      </div>
+                      )}
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
 
-export default OrderSeller
+export default ProfileOrderItemSeller

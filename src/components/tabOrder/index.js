@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Style from "./tabs.module.css";
+import TableOrder from "../tableOrder";
 
-function Tabs() {
+function Tabs(props) {
     const [toggleState, setToggleState] = useState(1);
 
     const toggleTab = (index) => {
@@ -51,6 +52,7 @@ function Tabs() {
 
         <div className={Style.contentTabs}>
             <div className={toggleState === 1 ? `${Style.content}  ${Style.activeContent}` : Style.content}>
+                <TableOrder userID={props.userID} role = {props.role}/>
             </div>
             <div className={toggleState === 2 ? `${Style.content}  ${Style.activeContent}` : Style.content}>
             </div>

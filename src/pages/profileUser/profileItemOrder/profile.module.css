@@ -1,0 +1,249 @@
+/* main page ================================================================================================================================================================================ */
+.mainPage{
+  background: #F5F5F5;
+}
+/* navbar vertical ================================================================================================================================================================================ */
+.nav-vertical{
+  font-family: 'Metropolis';
+}
+.navItem{
+  margin-left: 80px;
+}
+
+.boxSubNaver{
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.backgroundNavVer{
+  background-color: #fff;
+}
+.profileNav{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+.profileImage{
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profileName{
+  display: flex;
+  flex-direction: column;
+  margin-left: 14px;
+}
+.navVerticalTitle{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #9B9B9B;
+  text-decoration: none;
+  margin-top: auto;
+}
+.activePage{
+  font-weight: bold;
+  color: #222222;
+}
+.boxImageProfile{
+  background-color: blue;
+  border-radius: 50%;
+  padding: 8px 8px;
+  height: 32px;
+  width: 32px;
+}
+.colorBox1{
+  background: #456BF3;
+}
+.colorBox2{
+  background: #F36F45;
+}
+.colorBox3{
+  background: #F3456F;
+}
+.editProfile{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #9B9B9B;
+  margin-left: 2px;
+  text-decoration: none;
+}
+/* profile ============================================================================================================================================================ */
+.mainProfile{
+  margin-top: 50px;
+  margin-left: 45px;
+  background: #FFFFFF;
+  border: 1px solid #9B9B9B;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 850px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.itemContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.mainProfileTitle{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #222222;
+}
+.mainProfileSubTitle{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #9B9B9B;
+}
+.hrMargin{
+  margin-right: 22px;
+  margin-bottom: 34px;
+}
+.addingNewAddress{
+  padding: 34px 258px;
+  width: 710px;
+  border: 1px dashed #9B9B9B;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  color: #9B9B9B;
+  margin-left: 25px;
+  margin-bottom: 34px;
+  background-color: #fff;
+}
+.addressUserOld{
+  width: 710px;
+  margin-left: 25px;
+  margin-right: 50px;
+  background: #FFFFFF;
+  border: 1px solid #DB3022;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.btnAddressUserOld{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: #DB3022;
+  background: none;
+  border: none;
+  margin-left: 25px;
+  margin-bottom: 30px;
+}
+.titleBox{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: #222222;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.addressDetail{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #222222;
+  margin: 10px 35px 20px 30px;
+}
+.btnAddressUser{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #222222;
+  padding-left: 23px;
+  padding-right: 23px;
+  border: 1px solid #9B9B9B;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: #fff;
+  color: #9B9B9B;
+  margin-left: 30px;
+}
+/* Modal 2 address ==================================================================================================================================================================================== */
+.labelFormModal{
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9B9B9B;
+}
+.placeholderFormModal{
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(212, 212, 212, 1);
+}
+.checkboxModalAddress{
+  margin-left: 15px;
+}
+.labelPrimaryAddress{
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  color: #9B9B9B;
+  margin-left: 13px;
+}
+.btnCancelNewAddress{
+  border: 1px solid #9B9B9B;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background: #FFFFFF;
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9B9B9B;
+  padding: 8px 57px;
+}
+.btnSaveNewAddress{
+  box-sizing: border-box;
+  border-radius: 24px;
+  background: #DB3022;
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  padding: 8px 64px;
+}
+@media (max-width: 576px){
+  .navItem{
+      margin-left: 0%;
+  }
+  .nav-vertical{
+      width: 100%;
+  }
+  .mainProfile{
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+      height: 90%;
+  }
+}

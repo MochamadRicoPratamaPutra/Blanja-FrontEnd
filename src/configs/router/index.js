@@ -4,6 +4,7 @@ import Home from '../../pages/Home'
 import SellingProduct from '../../pages/profileSeller/ProfileSelling'
 import ProfileMyProduct from '../../pages/profileSeller/ProfileMyProduct'
 import ProfileUpdateProduct from '../../pages/profileSeller/ProfileUpdateProduct'
+import ProfileOrderItemSeller from '../../pages/profileSeller/ProfileItemOrderSeller'
 import Product from '../../pages/Products'
 import LoginCustomer from '../../pages/Login/LoginUser'
 import LoginSeller from '../../pages/Login/LoginSeller'
@@ -18,6 +19,7 @@ import Search from '../../pages/Search'
 import ProfileCustomer from '../../pages/profileUser/profile'
 import ProfileAddress from '../../pages/profileUser/profileAddress'
 import ProfileOrder from '../../pages/profileUser/profileOrder'
+import ProfileOrderItem from '../../pages/profileUser/profileItemOrder'
 import ProfileSeller from '../../pages/profileSeller/profile'
 import ProfileSellerMyOrder from '../../pages/profileSeller/profileMyOrder'
 import PublicRoute from './module/publicRoute'
@@ -42,6 +44,7 @@ const Router = () => {
                 <SellerRoute exact path="/profile-seller-my-product/:id" component={ProfileMyProduct} />
                 <SellerRoute exact path="/profile-seller-update-product/:id" component={ProfileUpdateProduct} />
                 <SellerRoute exact path="/profile-seller-order/:id" component={ProfileSellerMyOrder} />
+                <SellerRoute exact path="/profile-seller-order-item/:id" component={ProfileOrderItemSeller} />
                 <CommonRoute exact path="/products/:id" component={Product} />
                 <PublicRoute exact path="/login" component={LoginCustomer} />
                 <PublicRoute exact path="/login-seller" component={LoginSeller} />
@@ -56,6 +59,7 @@ const Router = () => {
                 <CustomerRoute exact path="/profile/:id" component={ProfileCustomer} />
                 <CustomerRoute exact path="/profile-address/:id" component={ProfileAddress} />
                 <CustomerRoute exact path="/profile-order/:id" component={ProfileOrder} />
+                <CustomerRoute exact path="/profile-item/:id" component={ProfileOrderItem} />
                 <Route exact path="/verification/:id" component={ConfirmationStatus} />
                 <Route exact path="/forbidden" component={ForbiddenPages} />
             </Switch>

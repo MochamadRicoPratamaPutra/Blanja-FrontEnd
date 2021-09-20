@@ -1,14 +1,28 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import Style from './profile.module.css'
 import Pen from '../../../assets/pen-profile.png'
 import User from '../../../assets/user 1.svg'
 import Map from '../../../assets/map-pin (3) 1.svg'
-import Tabs from '../../../components/tabOrder'
 import Clipboard from '../../../assets/clipboard 1.svg'
 import { useSelector } from 'react-redux'
-const ProfileOrder = () => {
+import CartBox from '../../../components/CartBox'
+import axios from 'axios'
+import { useParams } from 'react-router'
+const ProfileOrderItem = () => {
     const user = useSelector(state => state.user.profile)
+    const {id} = useParams()
+    const [product, setProduct] = useState([])
+    useEffect(()=>{
+      axios.get(`${process.env.REACT_APP_API_URL}v1/order-items/${id}`, {headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      }})
+      .then((res) => {
+          setProduct(res.data.data)
+      })
+      .catch((err) => {
+      })
+  }, [id])
     return (
         <div>
             <div class="row no-gutter mt-0 nav-vertical ml-0 mr-0">
@@ -48,7 +62,12 @@ const ProfileOrder = () => {
                 </div>
                 <div class={`col-md-9 ${Style.mainPage}`}>
                     <div class={Style.mainProfile}>
-                        <Tabs userID = {user.id} role = {user.role}/>
+                      {product.map((item)=>
+                      <div className={Style.itemContainer}>
+                        <CartBox name={item.name} img={item.imgUrl} price={item.price} type='checkout'/>
+                        <h1>x{item.quantity}</h1>
+                      </div>
+                      )}
                     </div>
                 </div>
             </div>
@@ -56,4 +75,4 @@ const ProfileOrder = () => {
     )
 }
 
-export default ProfileOrder
+export default ProfileOrderItem
