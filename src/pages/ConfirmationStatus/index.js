@@ -9,7 +9,7 @@ const ConfirmationStatus = () => {
     const history = useHistory()
     const [validate, setValidate] = useState(false)
     useEffect( () => {
-        axios.get(`http://localhost:4000/v1/users/verification/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}v1/users/verification/${id}`)
         .then((res) =>{
             setValidate(true)
             setTimeout(() => {
