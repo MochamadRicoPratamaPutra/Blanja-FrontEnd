@@ -53,7 +53,7 @@ const SellingProduct = () => {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
         }
-        axios.post(`${process.env.REACT_APP_API_URL}/v1/products`, formData, config)
+        axios.post(`${process.env.REACT_APP_API_URL}v1/products`, formData, config)
         .then((result)=>{
             store.addNotification({
                 title: `Successfuly adding product`,
