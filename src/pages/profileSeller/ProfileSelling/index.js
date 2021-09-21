@@ -7,11 +7,14 @@ import Home from '../../../assets/home.svg'
 import Product from '../../../assets/product.svg'
 import Cart from '../../../assets/shopping-cart-seller.svg'
 import Box1 from '../../../assets/box-big.svg'
-import Box2 from '../../../assets/box-small.svg'
 import axios from 'axios'
+import { store } from 'react-notifications-component'
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 const SellingProduct = () => {
     const user = useSelector(state => state.user.profile)
+    const history = useHistory()
+    const [image, setImage] = useState(null)
     const [form, setForm] = useState({
         name: '',
         price: 0,
@@ -26,17 +29,62 @@ const SellingProduct = () => {
             [e.target.name]: e.target.value
         })
     }
+    const handleInputFile = (e) => {
+        setImage(URL.createObjectURL(e.target.files[0]))
+        setForm({
+            ...form,
+            [e.target.name]: e.target.files
+        })
+    }
     const handleSubmit = (e)=>{
         e.preventDefault()
         form.price = parseInt(form.price)
         form.stock = parseInt(form.stock)
         form.categoryID = parseInt(form.categoryID)
-        console.log(form);
-        axios.post(`${process.env.REACT_APP_API_URL}/v1/products`, form)
-        .then((res)=>{
-            alert('success making new entry for product')
+        const formData = new FormData()
+        formData.append('name', form.name)
+        formData.append('price', form.price)
+        formData.append('stock', form.stock)
+        formData.append('categoryID', form.categoryID)
+        formData.append('imgUrl', data.imgUrl[0], data.imgUrl[0].name)
+        formData.append('description', form.description)
+        const config = {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        }
+        axios.post(`${process.env.REACT_APP_API_URL}/v1/products`, formData, config)
+        .then(()=>{
+            store.addNotification({
+                title: `Successfuly adding product`,
+                message: `Product: ${result.name}`,
+                type: 'success',
+                insert: 'top',
+                container: 'top-right',
+                animationIn: ['animate__animated', 'animate__fadeIn'],
+                animationOut: ['animate__animated', 'animate__fadeOut'],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true,
+                },
+            });
+            history.push('/')
         })
-        .catch(()=> alert('failed'))
+        .catch(()=>{
+            store.addNotification({
+                title: `Error`,
+                message: `Error adding product`,
+                type: 'danger',
+                insert: 'top',
+                container: 'top-right',
+                animationIn: ['animate__animated', 'animate__fadeIn'],
+                animationOut: ['animate__animated', 'animate__fadeOut'],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true,
+                },
+            })
+        })
     }
     return (
         <div>
@@ -142,18 +190,14 @@ const SellingProduct = () => {
                         <div className={Style.itemPhoto}>
                             <div className={Style.photoBox}>
                                 <div className={Style.mainPhotoBox}>
-                                    <Link to="#"><img src={Box1} alt="" className={Style.mainItemPhoto}/></Link>
+                                    <img src={image ? image : product.imgUrl ? product.imgUrl : Box1} alt="foto" className={Style.mainItemPhoto}/>
                                     <p className={Style.mainProfileSubTitle}>Foto utama</p>
                                 </div>
-                                <Link to="#"><img src={Box2} alt="" className={Style.subItemPhoto}/></Link>
-                                <Link to="#"><img src={Box2} alt="" className={Style.subItemPhoto}/></Link>
-                                <Link to="#"><img src={Box2} alt="" className={Style.subItemPhoto}/></Link>
-                                <Link to="#"><img src={Box2} alt="" className={Style.subItemPhoto}/></Link>
-
                             </div>
                             <hr className={Style.hrMargin}/>
-                            <input type="text" name='imgUrl' id='imgUrl' className='form-control' onChange={handleChange} />
-                            <Link to="#" className={Style.uploadFotoBox}>Upload foto</Link>
+                            {/* <input type="text" name='imgUrl' id='imgUrl' className='form-control' placeHolder={item.imgUrl} onChange={handleChange} /> */}
+                            <input type='file' name='imgUrl' id='imgUrl' onChange={handleInputFile} className={Style.hide}/>
+                            <label htmlFor="imgUrl" className={`${Style.mainProfileSubTitle} ${Style.selectingImage}`}>Select Image</label>
                         </div>
                     </div>
                     <div className={Style.mainPhoto}>
