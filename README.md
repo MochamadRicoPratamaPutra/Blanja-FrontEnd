@@ -1,13 +1,15 @@
-<h1 align='center'>Blanja</h1>
 <p align="center">
   <image align="center" width="200" src='./src/assets/Group 1158.svg' />
+  <h1 align='center'>Blanja</h1>
+</p>
+<p align="center">
   </p>
   <p align="center">
     <a href="https://blanja-rico.herokuapp.com/">View Demo</a>
     ·
-    <a href="https://github.com/19damah23/coffee-shop/issues">Report Bug</a>
+    <a href="https://github.com/MochamadRicoPratamaPutra/Blanja-FrontEnd/issues">Report Bug</a>
     ·
-    <a href="https://github.com/19damah23/coffee-shop/pulls">Request Feature</a>
+    <a href="https://github.com/MochamadRicoPratamaPutra/Blanja-FrontEnd/pulls">Request Feature</a>
   </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -17,8 +19,7 @@
   * [Screenshot](#screenshots)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
-  * [Installation](#installation)
-* [Related Project](#related-project-backend)
+* [Related Project](#related-project)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 
@@ -31,12 +32,12 @@ As a seller, you can sell any item that you want to sell, and as a customer you 
 ## Screenshots
 <p align="center">
   <image src='https://i.imgur.com/tKdWNx1.png' width=400px/>
-  <image src='https://i.imgur.com/AXv2Oyh.png' width=400px/>
-  <image src='https://i.imgur.com/2uyeed4.png' width=400px/>
+  <image src='https://i.imgur.com/ZHNU06f.jpg' width=400px/>
+  <image src='https://i.imgur.com/kSh1Xl7.jpg' width=400px height=200px/>
+  <image src='https://i.imgur.com/2uyeed4.png' width=400px height=200px/>
+  <image src='https://i.imgur.com/WZKni8k.png' width=400px height=200px/>
+  <image src='https://cdn.discordapp.com/attachments/886981620186357770/889913899946754048/unknown.png' width=400px height=200px/>
   <image src='https://i.imgur.com/g4HAyjz.png' width=400px/>
-  <image src='hhttps://i.imgur.com/eol7Wzu.png' width=400px/>
-  <image src='https://i.imgur.com/YBamUvF.png' width=400px/>
-  <image src='https://i.imgur.com/WZKni8k.png' width=400px/>
 </p>
 
 ## Built With
