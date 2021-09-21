@@ -40,7 +40,6 @@ const SellingProduct = () => {
         e.preventDefault()
         form.price = parseInt(form.price)
         form.stock = parseInt(form.stock)
-        form.categoryID = parseInt(form.categoryID)
         const formData = new FormData()
         formData.append('name', form.name)
         formData.append('price', form.price)
