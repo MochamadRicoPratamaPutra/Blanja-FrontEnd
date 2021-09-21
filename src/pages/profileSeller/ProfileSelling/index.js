@@ -19,7 +19,7 @@ const SellingProduct = () => {
         name: '',
         price: 0,
         stock: 0,
-        categoryID: 1,
+        categoryID: '',
         imgUrl: '',
         description: ''
     })
