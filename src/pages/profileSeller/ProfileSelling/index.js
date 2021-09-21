@@ -46,7 +46,7 @@ const SellingProduct = () => {
         formData.append('price', form.price)
         formData.append('stock', form.stock)
         formData.append('categoryID', form.categoryID)
-        formData.append('imgUrl', data.imgUrl[0], data.imgUrl[0].name)
+        formData.append('imgUrl', form.imgUrl[0], form.imgUrl[0].name)
         formData.append('description', form.description)
         const config = {
             headers: {
@@ -54,7 +54,7 @@ const SellingProduct = () => {
             }
         }
         axios.post(`${process.env.REACT_APP_API_URL}/v1/products`, formData, config)
-        .then(()=>{
+        .then((result)=>{
             store.addNotification({
                 title: `Successfuly adding product`,
                 message: `Product: ${result.name}`,
@@ -190,7 +190,7 @@ const SellingProduct = () => {
                         <div className={Style.itemPhoto}>
                             <div className={Style.photoBox}>
                                 <div className={Style.mainPhotoBox}>
-                                    <img src={image ? image : product.imgUrl ? product.imgUrl : Box1} alt="foto" className={Style.mainItemPhoto}/>
+                                    <img src={image ? image : form.imgUrl ? form.imgUrl : Box1} alt="foto" className={Style.mainItemPhoto}/>
                                     <p className={Style.mainProfileSubTitle}>Foto utama</p>
                                 </div>
                             </div>
