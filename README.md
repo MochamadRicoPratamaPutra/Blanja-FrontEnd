@@ -31,13 +31,14 @@ As a seller, you can sell any item that you want to sell, and as a customer you 
 
 ## Screenshots
 <p align="center">
-  <image src='https://i.imgur.com/tKdWNx1.png' width=400px/>
-  <image src='https://i.imgur.com/ZHNU06f.jpg' width=400px/>
+  <image src='https://i.imgur.com/g4HAyjz.png' width=400px height=200px/>
+  <image src='https://i.imgur.com/tKdWNx1.png' width=400px height=200px/>
+  <image src='https://i.imgur.com/ZHNU06f.jpg' width=400px height=200px/>
   <image src='https://i.imgur.com/kSh1Xl7.jpg' width=400px height=200px/>
   <image src='https://i.imgur.com/2uyeed4.png' width=400px height=200px/>
   <image src='https://i.imgur.com/WZKni8k.png' width=400px height=200px/>
   <image src='https://cdn.discordapp.com/attachments/886981620186357770/889913899946754048/unknown.png' width=400px height=200px/>
-  <image src='https://i.imgur.com/g4HAyjz.png' width=400px/>
+  <image src='https://i.imgur.com/AXv2Oyh.png' width=400px height=200px/>
 </p>
 
 ## Built With
