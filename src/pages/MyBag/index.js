@@ -5,7 +5,7 @@ import CartBox from '../../components/CartBox'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteCart } from '../../configs/redux/action/cartAction'
 const Bag = () => {
-    const {product, totalPrice} = useSelector(state => state.cart)
+    const {product, total} = useSelector(state => state.cart)
     const dispatch = useDispatch()
     const handleDelete = () => {
         dispatch(deleteCart())
@@ -31,8 +31,8 @@ const Bag = () => {
                         <div className={`${Style.summaryBox} ${Style.summaryItem}`}>
                             <p className={`${Style.selectedItem} ${Style.summaryItem}`}>Shopping Summary</p>
                             <div className={`${Style.price} ${Style.summaryItem}`}>
-                                <p className={Style.selectedTotalItem}>Total Price</p>
-                                <p className={Style.itemPrice}>Rp. {totalPrice}</p>
+                                <p className={Style.selectedTotalItem}>Total Price:</p>
+                                <p className={Style.itemPrice}>Rp. {total}</p>
                             </div>
                             <Link to="checkout" className={`${Style.summaryConfirmation} ${Style.summaryItem}`}>Buy</Link>
                         </div>
