@@ -34,11 +34,19 @@ As a seller, you can sell any item that you want to sell, and as a customer you 
   <image src='https://i.imgur.com/CTO6POZ.png' width=400px height=200px/>
   <image src='https://i.imgur.com/ZHNU06f.jpg' width=400px height=200px/>
   <image src='https://i.imgur.com/tKdWNx1.png' width=400px height=200px/>
+  
+  <image src='https://i.imgur.com/WZKni8k.png' width=400px height=200px/>
+  <image src='https://cdn.discordapp.com/attachments/886981620186357770/892617284290486302/unknown.png' width=400px height=200px/>
+  <image src='https://cdn.discordapp.com/attachments/886981620186357770/892617458232467466/unknown.png' width=400px height=200px/>
+  <image src='https://cdn.discordapp.com/attachments/886981620186357770/892617537945223209/unknown.png' width=400px height=200px/>
+  <image src='https://cdn.discordapp.com/attachments/886981620186357770/889913899946754048/unknown.png' width=400px height=200px/>
+  <image src='https://cdn.discordapp.com/attachments/886981620186357770/892619289746612234/unknown.png' width=400px height=200px/>
+  <image src='https://i.imgur.com/AXv2Oyh.png' width=400px height=200px/>
+  
   <image src='https://i.imgur.com/kSh1Xl7.jpg' width=400px height=200px/>
   <image src='https://i.imgur.com/2uyeed4.png' width=400px height=200px/>
-  <image src='https://i.imgur.com/WZKni8k.png' width=400px height=200px/>
-  <image src='https://cdn.discordapp.com/attachments/886981620186357770/889913899946754048/unknown.png' width=400px height=200px/>
-  <image src='https://i.imgur.com/AXv2Oyh.png' width=400px height=200px/>
+  <image src='https://cdn.discordapp.com/attachments/886981620186357770/892624836608811069/unknown.png' width=400px height=200px/>
+  <image src='https://cdn.discordapp.com/attachments/886981620186357770/892622249541140491/unknown.png' width=400px height=200px/>
 </p>
 
 ## Built With
