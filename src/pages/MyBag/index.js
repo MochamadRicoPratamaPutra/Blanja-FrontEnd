@@ -19,7 +19,7 @@ const Bag = () => {
                         <div className={Style.selected}>
                             <div className={Style.selectedOne}>
                                 <input className={Style.formCheckInput} type="checkbox" id="checkboxNoLabel" value="" aria-label="..."/>
-                                <p className={Style.selectedItem}>Select all items<span className={Style.selectedTotalItem}> (2 items selected)</span></p>
+                                <p className={Style.selectedItem}>Select all items</p>
                             </div>
                             <button className={Style.selectedDelete} onClick={handleDelete}>Delete</button>
                         </div>
