@@ -5,7 +5,7 @@
 <p align="center">
   </p>
   <p align="center">
-    <a href="https://blanja-rico.herokuapp.com/">View Demo</a>
+    <a href="https://blanja-vercel-rico.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/MochamadRicoPratamaPutra/Blanja-FrontEnd/issues">Report Bug</a>
     ·
